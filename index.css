@@ -2,6 +2,25 @@
 	
 
 }
+body{
+	background-color:LightSkyBlue;
+}
+
+
+p.titre{
+	text-align: center;
+}
+
+
+img.title{
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+
+
 #menu, #menu ul     
 
 {
@@ -29,7 +48,7 @@
         background : #000;         
         color : #fff; 
         text-decoration : none; 
-        width : 500px; 
+        width : 525px; 
 }
 
 
