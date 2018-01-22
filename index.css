@@ -135,11 +135,20 @@ html>body #menu li ul ul
         background: #fff; 
 
 }
+#menu li:hover ul ul, #menu li.sfhover ul ul 
+{
 
+        left: -999em; 
 
 }
 
-p
+
+#menu li:hover ul, #menu li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul  
+
 {
-	background-color: blue;
+
+        left: auto;
+        min-height:0; 
+}
+
 }
