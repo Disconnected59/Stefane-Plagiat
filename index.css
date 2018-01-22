@@ -126,17 +126,20 @@ html>body #menu li ul ul
 
 }
 	
+#menu a:hover    
 
+{
 
+        color: #000; 
+
+        background: #fff; 
 
 }
 
 
+}
 
 p
 {
 	background-color: blue;
-
-
-
 }
