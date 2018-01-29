@@ -20,6 +20,11 @@ body{
 	background-color:LightSkyBlue;
 }
 
+p.prix{
+	display: table;
+	background-color: white;
+	border-radius: 5px;
+}
 
 p.titre{
 	text-align: center;
