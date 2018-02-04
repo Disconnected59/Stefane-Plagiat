@@ -1,9 +1,11 @@
 @media only screen and (max-width: 321px) {
 	div.titre{
 	text-align:center;
-	background-color:rgba(255,255,255,1) ;
 	padding: 5px;
 	margin: 10px;
+	
+	
+	
 }
 	#menu, #menu ul     
 
@@ -17,7 +19,7 @@
 
 }
 body{
-	background-color:LightSkyBlue;
+	background-color:CornflowerBlue;
 }
 
 p.prix{
@@ -62,8 +64,8 @@ div.contoursmaison{
 
 {
         
-		padding : 200; 
-        margin : 200; 
+		padding : 0px; 
+        margin : auto; 
         list-style : none; 
         line-height : 50px; 
         text-align : center; 
@@ -86,7 +88,7 @@ div.contoursmaison{
         background : #000;         
         color : #fff; 
         text-decoration : none; 
-        width : 525px; 
+        width : 400px; 
 }
 
 
@@ -116,7 +118,7 @@ html>body #menu li
 
         position: absolute; 
 
-        width: 144px;
+        width: 500px;
 
         left: -999em; 
 
