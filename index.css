@@ -58,6 +58,9 @@ div.contoursmaison{
 }
 
 
+nav{
+	align-items: center;
+}
 
 
 #menu, #menu ul     
@@ -69,6 +72,7 @@ div.contoursmaison{
         list-style : none; 
         line-height : 50px; 
         text-align : center; 
+		align-items: center;
 }
 
 
@@ -76,7 +80,8 @@ div.contoursmaison{
 {
         font-weight : bold; 
         font-family : Arial; 
-        font-size : 12px; 
+        font-size : 12px;
+		align-items: center;
 }
 
 
@@ -89,6 +94,7 @@ div.contoursmaison{
         color : #fff; 
         text-decoration : none; 
         width : 400px; 
+		align-items: center;
 }
 
 
@@ -108,7 +114,7 @@ html>body #menu li
 {
 
         border-right: 1px solid transparent ; 
-
+		align-items: center;
 }
 
 
@@ -121,7 +127,7 @@ html>body #menu li
         width: 500px;
 
         left: -999em; 
-
+		align-items: center;
 }
 
 
@@ -139,7 +145,7 @@ html>body #menu li ul li
 {
 
         border-top : 1px solid transparent; 
-
+		align-items: center;
 }
 
 
@@ -163,7 +169,7 @@ html>body #menu li ul ul
 {
 
         border-left     : 1px solid transparent ; 
-
+		align-items: center;
 }
 	
 #menu a:hover    
@@ -192,6 +198,5 @@ html>body #menu li ul ul
 }
 div.contoursmaison:hover{
 	box-shadow: 0px 0px 4px 4px rgba(100,20,20,0.6);
-	transform : scale(1.05);
 }
 }
