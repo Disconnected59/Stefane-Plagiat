@@ -93,17 +93,20 @@ nav{
         background : #000;         
         color : #fff; 
         text-decoration : none; 
+
         width : 400px; 
 		align-items: center;
+
 }
 
 
-#menu li   
+#menu>li   
 
 { 
 
-        float : left;       
-        border-right : 1px solid #fff; 
+        float : left;     
+        border-right : 1px solid #fff;
+        width: 33%; 
 }
 
 
@@ -114,27 +117,28 @@ html>body #menu li
 {
 
         border-right: 1px solid transparent ; 
-		align-items: center;
+
 }
 
 
 #menu li ul 
 
 { 
-
         position: absolute; 
 
-        width: 500px;
+        width: 100%;
 
         left: -999em; 
-		align-items: center;
+
 }
 
 
 
 #menu li ul li 
 {
-        border-top : 1px solid #fff; 
+        /*float: none;*/
+        border-top : 1px solid #fff;
+        width: 32.7%; 
 }
 
 
@@ -196,6 +200,8 @@ html>body #menu li ul ul
         left: auto;
         min-height:0; 
 }
+
+
 div.contoursmaison:hover{
 	box-shadow: 0px 0px 4px 4px rgba(100,20,20,0.6);
 }
