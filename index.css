@@ -93,10 +93,6 @@ nav{
         background : #000;         
         color : #fff; 
         text-decoration : none; 
-
-        width : 400px; 
-		align-items: center;
-
 }
 
 
@@ -158,9 +154,6 @@ html>body #menu li ul li
 {
 
         margin    : -22px 0 0 144px ; 
-
-        
-
         border-left     : 1px solid #fff ;   
 
 }
@@ -171,17 +164,13 @@ html>body #menu li ul li
 html>body #menu li ul ul                
 
 {
-
         border-left     : 1px solid transparent ; 
-		align-items: center;
 }
 	
 #menu a:hover    
 
 {
-
         color: #000; 
-
         background: #fff; 
 
 }
