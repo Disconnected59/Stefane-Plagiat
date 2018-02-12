@@ -1,33 +1,26 @@
 @media only screen and (max-width: 321px) {
-
 	div.titre{
-	text-align:center;
-	padding: 5px;
-	margin: 10px;
-<<<<<<< HEAD
-	
-	
-	
-}
-	img{
-	image-display: none;
+		text-align:center;
+		padding: 5px;
+		margin: 10px;
 	}
-=======
-        }
+	
+	img{
+		image-display: none;
+	}  
+	
 	#menu, #menu ul     
-
-{
-        
+	{
 		display: inline;
-        list-style : none; 
-        line-height : 50px; 
-        text-align : center; 
+		list-style : none; 
+		line-height : 50px; 
+		text-align : center; 
+	}
 }
->>>>>>> 8a6fb9f803e37e3055f9551ff9e4ff0d83584dca
 
-}
+
 body{
-	background-color:CornflowerBlue;
+	background-color: CornflowerBlue;
 }
 
 p.prix{
