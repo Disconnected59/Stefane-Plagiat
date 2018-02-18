@@ -4,15 +4,6 @@
 			<meta charset="UTF-8" />
 			<title>Maison2</title>
 			<link rel="stylesheet" type="text/css" href="../index.css">
-			<script type="text/javascript" src="../jspdf/jspdf.js"></script>
-      <script type="text/javascript" >
-        function genPDF()
-        {
-        var doc = new jsPDF();
-        doc.fromHTML($('#page').get(0), 20,20,{'width':500});
-        doc.save('Test.pdf');
-        }
-      </script>
 	</head>
 	<body>
 	<p class="titre"><img src="../pictures/logo.png" class="titre" alt="bande du site"></p>
@@ -45,7 +36,7 @@
        				 </li>
 				</ul>
 			</nav>	
-	
+	<div id="HTMLtoPDF">
 	<h1> Maison a vendre à Flers </h1>
 	
 	<h2> Descriptif de cette maison </h2>
@@ -67,13 +58,15 @@
           <img src="../pictures/imageSlider/slidermaison/slidermaison2/image3maison2.jpg" width="100"/>
         </label>
         <img src="../pictures/imageSlider/slidermaison/slidermaison2/image3maison2.jpg"/>
-	
+	      <label><a href="#" onclick="HTMLtoPDF()"><img src="http://pdf-ace.com/images/buttons/save-as-pdf-3.gif" width="120" height="27" alt="Save as PDF" /></a>
     </div>
 	
 	
 	<p> Cette maison originale, bla bla bla bla bla bla bla bla bla bla <p>
-	
-	
+	</div>
+	<script src="../js/pdfFromHTML.js"></script>
+  <script src="../js/jquery-2.1.3.js"></script>
+  <script src="../js/jspdf.js"></script>
 	
 	
 	
