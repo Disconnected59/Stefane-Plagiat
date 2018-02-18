@@ -4,69 +4,77 @@
 			<meta charset="UTF-8" />
 			<title>Maison1</title>
 			<link rel="stylesheet" type="text/css" href="../index.css">
-			<script type="text/javascript" src="../menu.js"></script>
+      <script type="text/javascript" src="../jspdf/jspdf.js"></script>
+      <script type="text/javascript" >
+        function genPDF()
+        {
+        var doc = new jsPDF();
+        doc.fromHTML($('#page').get(0), 20,20,{'width':500});
+        doc.save('Test.pdf');
+        }
+      </script>
 	</head>
 	<body>
-	<p class="titre"><img src="../pictures/logo.png" class="titre" alt="bande du site"></p>
-			<nav>
-				<ul id="menu">
-       				 <li>
-                 		 <a href="../index.html">accueil</a>
-        			 </li>
-        
-        			 <li>
-                		 <a href="#">Produits</a>
-                	 		 <ul>
-                        		 <li><a href="../maisons.html">Maisons</a></li>
-                        		 <li><a href="../appartements.html">Appartements</a></li>
-                        		 <li><a href="../locaux.html">Locaux Commerciaux</a></li>
-                             	 <li><a href="../immeuble.html">Immeubles</a></li>
-                             	 <li><a href="../terrainus.html">Terrains nus</a></li>
-                	 		 </ul>
+  	<p class="titre"><img src="../pictures/logo.png" class="titre" alt="bande du site"></p>
+  			<nav>
+  				<ul id="menu">
+         				 <li>
+                   		 <a href="../index.html">accueil</a>
+          			 </li>
+          			 <li>
+                  		 <a href="#">Produits</a>
+                  	 		 <ul>
+                          		 <li><a href="../maisons.html">Maisons</a></li>
+                          		 <li><a href="../appartements.html">Appartements</a></li>
+                          		 <li><a href="../locaux.html">Locaux Commerciaux</a></li>
+                               <li><a href="../immeuble.html">Immeubles</a></li>
+                               <li><a href="../terrainus.html">Terrains nus</a></li>
+                  	 		 </ul>
+          			 </li>
 
-        			 </li>
-
-        			 <li>
-                		 <a href="#">plus</a>
-                		 	 <ul>
-                        	 	 <li><a href="../forum.html">forum</a></li>
-                       			 <li><a href="../liens.html">liens</a></li>
-                    		     <li><a href="../contact.html">nous contacter</a></li>
-                    		     <li><a href="../team.html">team</a></li>
-               				 </ul>
-       				 </li>
-				</ul>
-			</nav>	
-	
-	<h1> Maison d'architecte originale </h1>
-	
-	<h2> Descriptif de cette maison </h2>
-	<div class="slider">
-        <input type="radio" name="slide_switch" id="id1"/>
-        <label for="id1">
-          <img src="../pictures/imageSlider/slidermaison/slidermaison1/image1maison1.jpg" width="100"/>
-        </label>
-        <img src="../pictures/imageSlider/slidermaison/slidermaison1/image1maison1.jpg"/>
-        
-        <input type="radio" name="slide_switch" id="id2" checked="checked"/>
-        <label for="id2">
-          <img src="../pictures/imageSlider/slidermaison/slidermaison1/image2maison1.jpg" width="100"/>
-        </label>
-        <img src="../pictures/imageSlider/slidermaison/slidermaison1/image2maison1.jpg"/>
-        
-        <input type="radio" name="slide_switch" id="id3"/>
-        <label for="id3">
-          <img src="../pictures/imageSlider/slidermaison/slidermaison1/image3maison1.jpg" width="100"/>
-        </label>
-        <img src="../pictures/imageSlider/slidermaison/slidermaison1/image3maison1.jpg"/>
-		
-    </div>
-	  
-	
-	<p> Cette maison originale, bla bla bla bla bla bla bla bla bla bla </p>
-	
-	
-	
-	
-	
+          			 <li>
+                  		 <a href="#">plus</a>
+                  		 	 <ul>
+                          	 	 <li><a href="../forum.html">forum</a></li>
+                         			 <li><a href="../liens.html">liens</a></li>
+                      		     <li><a href="../contact.html">nous contacter</a></li>
+                      		     <li><a href="../team.html">team</a></li>
+                 				 </ul>
+         				 </li>
+  				</ul>
+  			</nav>	
+  	<div id="page">
+  	<h1> Maison d'architecte originale </h1>
+  	
+  	<h2> Descriptif de cette maison </h2>
+  	<div class="slider">
+          <input type="radio" name="slide_switch" id="id1"/>
+          <label for="id1">
+            <img src="../pictures/imageSlider/slidermaison/slidermaison1/image1maison1.jpg" width="100"/>
+          </label>
+          <img src="../pictures/imageSlider/slidermaison/slidermaison1/image1maison1.jpg"/>
+          
+          <input type="radio" name="slide_switch" id="id2" checked="checked"/>
+          <label for="id2">
+            <img src="../pictures/imageSlider/slidermaison/slidermaison1/image2maison1.jpg" width="100"/>
+          </label>
+          <img src="../pictures/imageSlider/slidermaison/slidermaison1/image2maison1.jpg"/>
+          
+          <input type="radio" name="slide_switch" id="id3"/>
+          <label for="id3">
+            <img src="../pictures/imageSlider/slidermaison/slidermaison1/image3maison1.jpg" width="100"/>
+          </label>
+          <img src="../pictures/imageSlider/slidermaison/slidermaison1/image3maison1.jpg"/>
+  		    <label><a href="javascript:genPDF()"><img src="http://pdf-ace.com/images/buttons/save-as-pdf-3.gif" width="120" height="27" alt="Save as PDF" /></a>
+          </label>
+          
+      </div>
+  	  
+  	
+  	<p> Cette maison originale, bla bla bla bla bla bla bla bla bla bla </p>
+  	
+  	</div>
+  	
+  	
+  	
 	</body>

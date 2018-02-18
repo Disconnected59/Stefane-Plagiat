@@ -4,7 +4,15 @@
 			<meta charset="UTF-8" />
 			<title>Maison4</title>
 			<link rel="stylesheet" type="text/css" href="../index.css">
-			<script type="text/javascript" src="../menu.js"></script>
+			<script type="text/javascript" src="../jspdf/jspdf.js"></script>
+      <script type="text/javascript" >
+        function genPDF()
+        {
+        var doc = new jsPDF();
+        doc.fromHTML($('#page').get(0), 20,20,{'width':500});
+        doc.save('Test.pdf');
+        }
+      </script>
 	</head>
 	<body>
 	<p class="titre"><img src="../pictures/logo.png" class="titre" alt="bande du site"></p>
