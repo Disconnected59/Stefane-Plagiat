@@ -29,7 +29,7 @@
 
 .recherche{
         display: flex;
-        flex-direction: column;
+        flex-direction: flex-start;
 }
 
 body{
