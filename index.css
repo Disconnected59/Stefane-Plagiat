@@ -18,6 +18,19 @@
 	}
 }
 
+.marge{
+        margin-left: 10em;
+}
+
+.box{
+        display: flex;
+        flex-direction: column;
+}
+
+.recherche{
+        display: flex;
+        flex-direction: column;
+}
 
 body{
 	background-color: CornflowerBlue;

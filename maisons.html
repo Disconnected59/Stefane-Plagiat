@@ -38,7 +38,22 @@
        				 </li>
 				</ul>
 			</nav>
-			
+			<form method="post" action="Recherche.php">
+				 Type de produit: <span class="marge">Jardin:</span><br/>
+			     <div class="recherche">
+			        <div class="box">
+			        <div><input type="radio" name="Type" value="Maison" id="maison" /> <label for="maison">Maisons</label></div>
+			        <div><input type="radio" name="Type" value="Appartement" id="app" /> <label for="app">Appartement</label></div>
+			        <div><input type="radio" name="Type" value="Immeuble" id="immeuble" /> <label for="immeuble">Immeuble</label></div>
+			        <div><input type="radio" name="Type" value="Locaux" id="locaux" /> <label for="locaux">Locaux</label></div>
+			        <div><input type="radio" name="Type" value="Terrain" id="nus" /> <label for="nus">Terrain nus</label></div>
+			        </div>
+			        <div class="box">
+			        <div><input type="radio" name="Jardin" value="Oui" id="oui" /> <label for="oui">Oui</label></div>
+			        <div><input type="radio" name="Jardin" value="Non" id="non" /> <label for="non">Non</label></div>
+			        </div>
+			   </div>
+			</form>
 			<br/>
 			<br/><br/>
 			<div class="titre">
