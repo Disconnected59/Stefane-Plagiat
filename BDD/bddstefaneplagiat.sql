@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 19 mars 2018 à 15:46
+-- Généré le :  Dim 25 mars 2018 à 18:02
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `biens` (
   `type` int(11) NOT NULL,
   PRIMARY KEY (`numero`),
   KEY `type` (`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `biens`
@@ -63,7 +63,13 @@ INSERT INTO `biens` (`numero`, `adresse`, `surface`, `jardin`, `nbPieces`, `prix
 (12, '27 rue Hospote', 36, 'non', 2, 165000, 'Muette', 2),
 (13, '14 rue Klagoun', 162, 'non', 32, 752000, 'Lille', 3),
 (14, '23 rue Jaures', 400, 'non', 8, 950000, 'Roubaix', 3),
-(15, '26 rue Louvre', 90, 'oui', 9, 854200, 'Marseille', 3);
+(15, '26 rue Louvre', 90, 'oui', 9, 854200, 'Marseille', 3),
+(16, '27 rue Mer', 848, 'non', 80, 1400000, 'Bourget', 4),
+(17, '42 rue Pavis', 820, 'non', 59, 990000, 'Luxe', 4),
+(18, '46 rue Lavoisier', 150, 'oui', 0, 80000, 'Bloup', 5),
+(19, '57 rue Loupille', 1000, 'oui', 0, 150000, 'Basses', 5),
+(20, '62 rue Belleverte', 750, 'oui', 0, 85000, 'Bignou', 5),
+(21, '75 rue Lafoison', 686, 'oui', 0, 152258, 'Iledyeu', 5);
 
 -- --------------------------------------------------------
 
@@ -128,7 +134,25 @@ INSERT INTO `images` (`lien`, `numero`) VALUES
 ('../pictures/imageSlider/sliderlocaux/sliderlocal2/image3local2.jpg', 14),
 ('../pictures/imageSlider/sliderlocaux/sliderlocal3/image1local3.jpg', 15),
 ('../pictures/imageSlider/sliderlocaux/sliderlocal3/image2local3.jpg', 15),
-('../pictures/imageSlider/sliderlocaux/sliderlocal3/image3local3.jpg', 15);
+('../pictures/imageSlider/sliderlocaux/sliderlocal3/image3local3.jpg', 15),
+('../pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image1immeuble1.jpg', 16),
+('../pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image2immeuble1.jpg', 16),
+('../pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image3immeuble1.jpg', 16),
+('../pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image1immeuble2.jpg', 17),
+('../pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image2immeuble2.jpg', 17),
+('../pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image3immeuble2.jpg', 17),
+('../pictures/imageSlider/sliderterrain/sliderterrain1/image1terrain1.jpg', 18),
+('../pictures/imageSlider/sliderterrain/sliderterrain1/image2terrain1.jpg', 18),
+('../pictures/imageSlider/sliderterrain/sliderterrain1/image3terrain1.jpg', 18),
+('../pictures/imageSlider/sliderterrain/sliderterrain2/image1terrain2.jpg', 19),
+('../pictures/imageSlider/sliderterrain/sliderterrain2/image2terrain2.jpg', 19),
+('../pictures/imageSlider/sliderterrain/sliderterrain2/image3terrain2.jpg', 19),
+('../pictures/imageSlider/sliderterrain/sliderterrain3/image1terrain3.jpg', 20),
+('../pictures/imageSlider/sliderterrain/sliderterrain3/image2terrain3.jpg', 20),
+('../pictures/imageSlider/sliderterrain/sliderterrain3/image3terrain3.jpg', 20),
+('../pictures/imageSlider/sliderterrain/sliderterrain4/image1terrain4.jpg', 21),
+('../pictures/imageSlider/sliderterrain/sliderterrain4/image2terrain4.jpg', 21),
+('../pictures/imageSlider/sliderterrain/sliderterrain4/image3terrain4.jpg', 21);
 
 -- --------------------------------------------------------
 
