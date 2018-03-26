@@ -125,4 +125,12 @@
 			<a href="appartements/appartement7.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
 			</div> 
 			</div>
+        </body>               
+</html>                       
+        
+<?php
+ 
+$objetPDO= new PDO('mysql:host=localhost;dbname=lqexoaccesbdd','root','')
+
+?>
 			
