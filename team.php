@@ -17,7 +17,8 @@
                 <br/>
                 <label for="motdepasse">Mot de passe :<label>
                 <input type="text" id="motdepasse" name="mdp">
-                
+                <br/>
+                <input type="submit" name="seconnecter" value="Se connecter">
            </form> 
             </fieldset>    
                 
