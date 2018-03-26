@@ -94,6 +94,18 @@
                                      <div><input type="radio" name="prix" value="301-999" id="9999" /> <label for="9999">400,001 à 999,999</label></div>
                                      <div><input type="radio" name="prix" value="1001" id="10000" /> <label for="10000">1,000,000 ou plus</label></div>
 			         </div>
+                                 <div class="marge">
+                                     location:<br/>
+                                     <select name="location">
+                                         <?php
+                                         echo "<option value='".d."'>".d."</option>";
+                                         ?>
+                                     </select>
+                                 </div>
+                                 <div class="marge">
+                                     <input type="submit" value="Rechercher"/>
+                                     <input type="reset" value="mise à zero"/>
+                                 </div>
 			   </div>
 			</form>
 			<br/>
