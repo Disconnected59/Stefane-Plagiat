@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html xmins="http://www.w3.org/1999.xhtml" xml:lang="fr" lang="fr">
 	<head>
-			<meta charset="UTF-8" />
-			<title>Locaux</title>
-			<link rel="stylesheet" type="text/css" href="../index.css">
+			<meta charset="UTF-8"/>
+			<title>Appartement </title>
+				<link rel="stylesheet" type="text/css" href="../index.css">
 			<script type="text/javascript" src="../menu.js"></script>
+			
 	</head>
 	<body>
-	<p class="titre"><img src="../pictures/logo.png" class="titre" alt="bande du site"></p>
+			<p class="titre"><img src="../pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
        				 <li>
@@ -17,11 +18,11 @@
         			 <li>
                 		 <a href="#">Produits</a>
                 	 		 <ul>
-                        		 <li><a href="../maisons.html">Maisons</a></li>
-                        		 <li><a href="../appartements.html">Appartements</a></li>
-                        		 <li><a href="../locaux.html">Locaux Commerciaux</a></li>
-                             	 <li><a href="../immeuble.html">Immeubles</a></li>
-                             	 <li><a href="../terrainus.html">Terrains nus</a></li>
+                        		 <li><a href="../maisons.php">Maisons</a></li>
+                        		 <li><a href="../appartements.php">Appartements</a></li>
+                        		 <li><a href="../locaux.php">Locaux Commerciaux</a></li>
+                             	 <li><a href="../immeuble.php">Immeubles</a></li>
+                             	 <li><a href="../terrainus.php">Terrains nus</a></li>
                 	 		 </ul>
 
         			 </li>
@@ -29,10 +30,10 @@
         			 <li>
                 		 <a href="#">plus</a>
                 		 	 <ul>
-                        	 	 <li><a href="../forum.html">forum</a></li>
-                       			 <li><a href="../liens.html">liens</a></li>
-                    		     <li><a href="../contact.html">nous contacter</a></li>
-                    		     <li><a href="../team.html">team</a></li>
+                        	 	 <li><a href="../forum.php">forum</a></li>
+                       			 <li><a href="../liens.php">liens</a></li>
+                    		     <li><a href="../contact.php">nous contacter</a></li>
+                    		     <li><a href="../team.php">team</a></li>
                				 </ul>
        				 </li>
 				</ul>
