@@ -1,4 +1,9 @@
 ﻿<!DOCTYPE html>
+<?php
+session_start();
+ include_once 'FonctionsPhp/fonctionsBackOffice.php';
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+?>
 <html lang="fr">
 	<head>
 			<meta charset="UTF-8"/>
