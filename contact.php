@@ -1,18 +1,18 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<html xmins="http://www.w3.org/1999.xhtml" xml:lang="fr" lang="fr">
 	<head>
-			<meta charset="UTF-8" />
+			<meta charset="UTF-8"/>
 			<title>Contact</title>
-			<link rel="stylesheet" type="text/css" href="index.css">
+				<link rel="stylesheet" type="text/css" href="index.css">
 			<script type="text/javascript" src="menu.js"></script>
-
+			
 	</head>
 	<body>
-		<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
+			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
        				 <li>
-                 		 <a href="index.html">accueil</a>
+                 		 <a href="index.php">accueil</a>
         			 </li>
         
         			 <li>
@@ -30,14 +30,14 @@
         			 <li>
                 		 <a href="#">plus</a>
                 		 	 <ul>
-                        	 	 <li><a href="forum.php">forum</a></li>
+                                             <li><a href="forum.php">forum</a></li>
                        			 <li><a href="liens.php">liens</a></li>
                     		     <li><a href="contact.php">nous contacter</a></li>
                     		     <li><a href="team.php">team</a></li>
                				 </ul>
        				 </li>
 				</ul>
-			</nav>	
+			</nav>
 		<h1> Demande de contact </h1>
 	
 		<p> Nous sommes à votre service, nos agents immobiliers seront ravi de vous répondre pour toute demande de projets. </p>
@@ -49,3 +49,4 @@
 	
 	
 	</body>
+</html>
