@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+session_start();
+ include_once 'FonctionsPhp/fonctionsBackOffice.php';
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+?>
 <html lang="fr">
 	<head>
 			<meta charset="UTF-8" />
@@ -102,8 +107,26 @@
 </body>	
                           </html>
 <?php
- 
-$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+if(isset($_POST['seconnecter']))
+{
+  $login=$_POST['login'];
+  $mdp=$_POST['motdepasse'];
+  
+  
+ $verif= verifUtil($objetPDO, $login, $mdp);
+ if ($verif==true)
+ {
+     echo('Vous êtes connectés');
+ }
+ else
+ {
+     echo('Erreur');
+ }
+          
+          
+          
+}
+
         
         
 ?>

@@ -83,7 +83,23 @@
 </html>	
 
 <?php
- 
-$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+ include_once 'FonctionsPhp/fonctionsBackOffice.php';
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
+if(isset($_POST['login']))
+{
+  $login=$_POST['login'];
+  $mdp=$_POST['motdepasse'];
+  
+ $verif= verifUtil($objetPDO, $login, $mdp);
+ if ($verif==true)
+ {
+     
+ }
+          
+          
+          
+}
+
+      
 ?>
