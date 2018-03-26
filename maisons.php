@@ -30,7 +30,7 @@
         			 <li>
                 		 <a href="#">plus</a>
                 		 	 <ul>
-                        	 	 <li><a href="forum.php">forum</a></li>
+                                             <li><a href="forum.php">forum</a></li>
                        			 <li><a href="liens.php">liens</a></li>
                     		     <li><a href="contact.php">nous contacter</a></li>
                     		     <li><a href="team.php">team</a></li>
@@ -116,3 +116,4 @@
 			 </div>
 			
 	</body>
+</html>
