@@ -8,6 +8,18 @@
 
 	</head>
 	<body>
+              <fieldset id="connexion">
+            <form method="post" id="connexion">
+                <label for="login">Identifiant:</label>
+                <input type="text" id="login" name="id">
+                <br/>
+                <br/>
+                <label for="motdepasse">Mot de passe :<label>
+                <input type="text" id="motdepasse" name="mdp">
+                <br/>
+                <input type="submit" name="seconnecter" value="Se connecter">
+           </form> 
+            </fieldset>    
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
@@ -44,10 +56,10 @@
 	
 			<div class="contoursmaison">
 			<h2> Local LE SEDAF </h2>					
-			<p> <img src="pictures/Locaux/locaux1.jpg"alt="Image du premier Local">
+			<p> <img src="pictures/Locaux/locaux1.jpg" alt="Image du premier Local">
 			  local a louer - 162m² - 310€/m²/an </p>
 			<div align="right">
-			<a href="Locaux/Locaux1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="Locaux/Locaux1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			</div>
 			
@@ -56,7 +68,7 @@
 			<p> <img src="pictures/Locaux/locaux2.jpg"alt="Image du second Local"><br>
 			 local a louer - 400m² - 600€/m²/an </p>
 			 <div align="right">
-			<a href="Locaux/Locaux2.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="Locaux/Locaux2.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			</div>
 			 
@@ -65,7 +77,14 @@
 			<p> <img src="pictures/Locaux/locaux3.jpg"alt="Image du troisieme local">
 			 local a louer - 90m² - 1000€/m²/an </p>
 			<div align="right">
-			<a href="Locaux/Locaux3.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="Locaux/Locaux3.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			</div>		
-</body>			
+</body>		
+
+</html>
+<?php
+ 
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+
+?>

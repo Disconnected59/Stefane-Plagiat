@@ -8,6 +8,18 @@
 			
 	</head>
 	<body>
+              <fieldset id="connexion">
+            <form method="post" id="connexion">
+                <label for="login">Identifiant:</label>
+                <input type="text" id="login" name="id">
+                <br/>
+                <br/>
+                <label for="motdepasse">Mot de passe :<label>
+                <input type="text" id="motdepasse" name="mdp">
+                <br/>
+                <input type="submit" name="seconnecter" value="Se connecter">
+           </form> 
+            </fieldset>    
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
@@ -125,4 +137,12 @@
 			<a href="appartements/appartement7.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
 			</div> 
 			</div>
+        </body>               
+</html>                       
+        
+<?php
+ 
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+
+?>
 			

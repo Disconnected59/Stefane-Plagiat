@@ -256,3 +256,11 @@ div.contoursmaison:hover{
         opacity: 1;
         transform: scale(1);
 }
+
+#connexion input,fieldset
+{
+    float : right;
+    border: none;
+    
+}
+

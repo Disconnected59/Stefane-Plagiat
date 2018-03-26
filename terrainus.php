@@ -8,6 +8,19 @@
 
 	</head>
 	<body>
+              <fieldset id="connexion">
+            <form method="post" id="connexion">
+                <label for="login">Identifiant:</label>
+                <input type="text" id="login" name="id">
+                <br/>
+                <br/>
+                <label for="motdepasse">Mot de passe :<label>
+                <input type="text" id="motdepasse" name="mdp">
+                <br/>
+                <input type="submit" name="seconnecter" value="Se connecter">
+          
+           </form> 
+            </fieldset>    
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
@@ -42,12 +55,12 @@
 	
 			<div class="contoursmaison">
 			<h2> Terrain 500m² Boisemont </h2>					
-			<p> <img src="http://upload.dinhosting.fr/G/J/m/terrainu1.jpg"alt="Image du premier terrain nu">
+			<p> <img src="http://upload.dinhosting.fr/G/J/m/terrainu1.jpg" alt="Image du premier terrain nu">
 			  terrain 500 m² Boisemont (95000)</p>
 			<p class="prix"> 175.000€ </p>
 			  
 			<div align="right">
-			<a href="TerrainsNus/terrainnus1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="TerrainsNus/terrainnus1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			
 			</div>
@@ -60,7 +73,7 @@
 			 Vente terrain 1.000 m² Basses (86200) </p>
 			 <p> 148 240€ </p>
 			<div align="right">
-			<a href="TerrainsNus/terrainnus2.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="TerrainsNus/terrainnus2.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			</div>
 			 
@@ -71,7 +84,7 @@
 			Vente terrain 750m² Bignou </p>
 			 <p class="prix"> 85 000 € </p>
 			 <div align="right">
-			<a href="TerrainsNus/terrainnus3.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="TerrainsNus/terrainnus3.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			</div>
 			 
@@ -83,7 +96,15 @@
 			 terrain 686 m² L'ile-D'yeu (85350) </p>
 			 <p class="prix"> 152 258 € </p>
 			 <div align="right">
-			<a href="TerrainsNus/terrainnus4.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="TerrainsNus/terrainnus4.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			</div>		
-</body>			
+</body>	
+                          </html>
+<?php
+ 
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+        
+        
+?>
+                         
