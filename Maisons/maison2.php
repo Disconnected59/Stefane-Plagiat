@@ -1,8 +1,16 @@
 ﻿<!DOCTYPE html>
+<?php
+include_once '../Fonctionsphp/Connexion.php';
+include_once '../Fonctionsphp/fonctionsBackOffice.php';
+include_once '../Fonctiondphp/fonctionsFrontOffice.php';
+?>
+
 <html lang="fr">
 	<head>
-			<meta charset="UTF-8" />
-			<title>Maison2</title>
+            <?php
+			echo '<meta charset="UTF-8" />';
+			echo '<title>Maison numéro '.$numMaison['id'].'</title>';
+            ?>
 			<link rel="stylesheet" type="text/css" href="../index.css">
 	</head>
 	<body>
