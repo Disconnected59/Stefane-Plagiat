@@ -8,6 +8,8 @@
 			
 	</head>
 	<body>
+			<?php
+			?>
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
@@ -116,3 +118,4 @@
 			 </div>
 			
 	</body>
+</html>
