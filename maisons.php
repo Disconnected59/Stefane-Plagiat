@@ -8,6 +8,8 @@
 			
 	</head>
 	<body>
+			<?php
+			?>
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
@@ -30,7 +32,7 @@
         			 <li>
                 		 <a href="#">plus</a>
                 		 	 <ul>
-                        	 	 <li><a href="forum.php">forum</a></li>
+                                             <li><a href="forum.php">forum</a></li>
                        			 <li><a href="liens.php">liens</a></li>
                     		     <li><a href="contact.php">nous contacter</a></li>
                     		     <li><a href="team.php">team</a></li>

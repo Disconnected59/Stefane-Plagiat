@@ -2,7 +2,7 @@
 <html xmins="http://www.w3.org/1999.xhtml" xml:lang="fr" lang="fr">
 	<head>
 			<meta charset="UTF-8"/>
-			<title>Maisons à vendre : </title>
+			<title>Appartements à vendre : </title>
 				<link rel="stylesheet" type="text/css" href="index.css">
 			<script type="text/javascript" src="menu.js"></script>
 			
