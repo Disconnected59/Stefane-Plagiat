@@ -86,4 +86,11 @@
 			<a href="TerrainsNus/terrainnus4.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
 			</div>
 			</div>		
-</body>			
+</body>	
+                          </html>
+<?php
+ 
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+
+?>
+                         

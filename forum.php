@@ -47,3 +47,11 @@
 		  </p>
 		  </div>
 	</body>
+        
+</html>
+
+<?php
+ 
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+
+?>

@@ -43,12 +43,12 @@
 			<div class="contoursmaison">
 			<h2> Vente immeuble Le Bourget (93350) </h2>					
 			
-			<p> <img src="http://upload.dinhosting.fr/J/y/3/immeuble1.jpg"alt="Image du premier immeuble">
+			<p> <img src="http://upload.dinhosting.fr/J/y/3/immeuble1.jpg" alt="Image du premier immeuble">
 			  10 appartements, 5 garages dans 2 immeubles sur terrain 848 m²</p>
 			<p class="prix"> 1.400.000€ </p>
 			  
 			<div align="right">
-			<a href="Immeubles/Immeuble1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG"alt="voir le détail"/></a>
+			<a href="Immeubles/Immeuble1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			
 			</div>
@@ -67,5 +67,11 @@
 			</div>
 			
 			
-</body>
-</html>			
+       </body>
+</html>	
+
+<?php
+ 
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+
+?>

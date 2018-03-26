@@ -130,7 +130,7 @@
         
 <?php
  
-$objetPDO= new PDO('mysql:host=localhost;dbname=lqexoaccesbdd','root','')
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
 
 ?>
 			
