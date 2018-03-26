@@ -51,27 +51,49 @@
                				 </ul>
        				 </li>
 				</ul>
-			</nav>
+			</nav><!prix et location>
+                        <br/><br/><br/>
 			<form method="post" action="Recherche.php">
-				 Type de produit: <span class="marge">Jardin:</span> <span class="marge">Nombre de pièce:</span><br/>
 			     <div class="recherche">
-			        <div class="box">
-			        <div><input type="radio" name="Type" value="Maison" id="maison" checked/> <label for="maison">Maisons</label></div>
-			        <div><input type="radio" name="Type" value="Appartement" id="app" /> <label for="app">Appartement</label></div>
-			        <div><input type="radio" name="Type" value="Immeuble" id="immeuble" /> <label for="immeuble">Immeuble</label></div>
-			        <div><input type="radio" name="Type" value="Locaux" id="locaux" /> <label for="locaux">Locaux</label></div>
-			        <div><input type="radio" name="Type" value="Terrain" id="nus" /> <label for="nus">Terrain nus</label></div>
-			        </div>
-			        <div class="box marge">
-			        <div><input type="radio" name="Jardin" value="Oui" id="oui" checked/> <label for="oui">Oui</label></div>
-			        <div><input type="radio" name="Jardin" value="Non" id="non" /> <label for="non">Non</label></div>
-			        </div>
-			        <div class="box marge">
-			        <div><input type="radio" name="Piece" value="0-10" id="10" checked/> <label for="10">0 à 10</label></div>
-			        <div><input type="radio" name="Piece" value="11-20" id="20" /> <label for="20">11 à 20</label></div>
-			        <div><input type="radio" name="Piece" value="21-30" id="30" /> <label for="30">21 à 30</label></div>
-			        <div><input type="radio" name="Piece" value="31" id="31" /> <label for="31">31 et plus</label></div>
-			        </div>
+			         <div>
+                                     Type de produit:
+                                     <div><input type="radio" name="Type" value="tous" id="tousType" checked/> <label for="tousType">Tous</label></div>
+                                     <div><input type="radio" name="Type" value="Maison" id="maison" /> <label for="maison">Maisons</label></div>
+                                     <div><input type="radio" name="Type" value="Appartement" id="app" /> <label for="app">Appartement</label></div>
+                                     <div><input type="radio" name="Type" value="Immeuble" id="immeuble" /> <label for="immeuble">Immeuble</label></div>
+                                     <div><input type="radio" name="Type" value="Locaux" id="locaux" /> <label for="locaux">Locaux</label></div>
+                                     <div><input type="radio" name="Type" value="Terrain" id="nus" /> <label for="nus">Terrain nus</label></div>
+			         </div>
+                                 <div class="marge">
+                                     Jardin:
+                                     <div><input type="radio" name="Jardin" value="tous" id="tousJardin" checked/> <label for="tousJardin">Tous</label></div>
+                                     <div><input type="radio" name="Jardin" value="Oui" id="oui" /> <label for="oui">Oui</label></div>
+                                     <div><input type="radio" name="Jardin" value="Non" id="non" /> <label for="non">Non</label></div>
+			         </div>
+                                 <div class="marge">
+                                     Nombre de pièces:
+                                     <div><input type="radio" name="Piece" value="tous" id="tousPiece" checked/> <label for="tousPiece">Tous</label></div>
+                                     <div><input type="radio" name="Piece" value="0-10" id="10" /> <label for="10">0 à 10</label></div>
+                                     <div><input type="radio" name="Piece" value="11-20" id="20" /> <label for="20">11 à 20</label></div>
+                                     <div><input type="radio" name="Piece" value="21-30" id="30" /> <label for="30">21 à 30</label></div>
+                                     <div><input type="radio" name="Piece" value="31" id="31" /> <label for="31">31 et plus</label></div>
+			         </div>
+                                 <div class="marge">
+                                     Surface:
+                                     <div><input type="radio" name="surface" value="tous" id="tousSurface" checked/> <label for="tousSurface">Tous</label></div>
+                                     <div><input type="radio" name="surface" value="0-100" id="100" /> <label for="100">0 à 100</label></div>
+                                     <div><input type="radio" name="surface" value="101-300" id="300" /> <label for="300">101 à 300</label></div>
+                                     <div><input type="radio" name="surface" value="301-999" id="999" /> <label for="999">301 à 999</label></div>
+                                     <div><input type="radio" name="surface" value="1001" id="1000" /> <label for="1000">1000 ou plus</label></div>
+			         </div>
+                                 <div class="marge">
+                                     Prix:
+                                     <div><input type="radio" name="prix" value="tous" id="tousPrix" checked/> <label for="tousPrix">Tous</label></div>
+                                     <div><input type="radio" name="prix" value="0-100" id="1000" /> <label for="1000">0 à 100,000</label></div>
+                                     <div><input type="radio" name="prix" value="101-300" id="4000" /> <label for="4000">100,001 à 400,000</label></div>
+                                     <div><input type="radio" name="prix" value="301-999" id="9999" /> <label for="9999">400,001 à 999,999</label></div>
+                                     <div><input type="radio" name="prix" value="1001" id="10000" /> <label for="10000">1,000,000 ou plus</label></div>
+			         </div>
 			   </div>
 			</form>
 			<br/>
