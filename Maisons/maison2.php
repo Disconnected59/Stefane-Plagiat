@@ -3,7 +3,11 @@
 include_once '../Fonctionsphp/Connexion.php';
 include_once '../Fonctionsphp/fonctionsBackOffice.php';
 include_once '../Fonctiondphp/fonctionsFrontOffice.php';
+
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','')
+        
 ?>
+
 
 <html lang="fr">
 	<head>
