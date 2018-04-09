@@ -9,20 +9,24 @@
 function verifUtil($objPDO, $login, $mdp)
 {
     $utilisateur=false;
-    $statement=$objPDO->prepare("SELECT * FROM utilisateur");
+    $statement=$objPDO->prepare("SELECT id, mdp FROM utilisateur WHERE"
+            ." id=:login AND mdp=:mdp");
+    
+    $affecteValeur= $statement->bindValue(':login',$login);
+    $affecteValeur= $statement->bindValue(':mdp',$mdp);
+
     $execution=$statement->execute();
-    $resultat=$statement->fetchAll();
-    $statement->closeCursor();
+    $resultat=$statement->fetch();
     
-    $logVerif=$resultat['id'];
-    $mdpVerif=$resultat['Mot de passe'];
+    $idRecup=$resultat['id'];
+    $mdpRecup=$resultat['mdp'];
     
-    if($logVerif==$login && $mdp==$mdpVerif)
+    if($idRecup==$login && $mdpRecup==$mdp)       
     {
-      $utilisateur=true ; 
-        
+       $utilisateur=true;     
     }
     
+     
     return $utilisateur;
 }
 

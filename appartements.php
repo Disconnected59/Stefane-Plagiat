@@ -4,7 +4,6 @@ session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 ?>
-<html xmins="http://www.w3.org/1999.xhtml" xml:lang="fr" lang="fr">
 	<head>
 			<meta charset="UTF-8"/>
 			<title>Appartements à vendre : </title>
@@ -14,16 +13,35 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 	</head>
 	<body>
               <fieldset id="connexion">
-            <form method="post" id="connexion">
+                  <form method="post" id="connexion" action="appartements.php">
                 <label for="login">Identifiant:</label>
-                <input type="text" id="login" name="id">
+                <input type="text" id="login" name="login">
                 <br/>
                 <br/>
                 <label for="motdepasse">Mot de passe :<label>
-                <input type="text" id="motdepasse" name="mdp">
+                <input type="password" id="motdepasse" name="mdp">
                 <br/>
-                <input type="submit" name="seconnecter" value="Se connecter">
-           </form> 
+                
+                <?php
+include_once 'FonctionsPhp/fonctionsBackOffice.php';
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+
+if(isset($_POST['login']))
+{
+  $login=$_POST['login'];
+  $mdp=$_POST['mdp'];
+  
+ $verif= verifUtil($objetPDO, $login, $mdp);
+ var_dump($verif);
+    
+ 
+ 
+}    
+    
+
+?>
+            <input type="submit" value="Se connecter">
+            </form> 
             </fieldset>    
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
@@ -145,27 +163,11 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
         </body>               
 </html>                       
         
-<?php
- include_once 'FonctionsPhp/fonctionsBackOffice.php';
-$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
-if(isset($_POST['login']))
-{
-  $login=$_POST['login'];
-  $mdp=$_POST['motdepasse'];
-  
- $verif= verifUtil($objetPDO, $login, $mdp);
- if ($verif==true)
- {
-     
- }
-          
-          
-          
-}
 
+         
         
-        
+      
 
-?>
+
 			
