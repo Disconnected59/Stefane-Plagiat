@@ -257,7 +257,7 @@ div.contoursmaison:hover{
         transform: scale(1);
 }
 
-#connexion input,fieldset
+.connexion input,fieldset
 {
     float : right;
     border: none;

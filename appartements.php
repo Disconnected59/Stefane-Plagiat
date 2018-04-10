@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php
+
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+       
 ?>
 	<head>
 			<meta charset="UTF-8"/>
@@ -10,9 +12,13 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 				<link rel="stylesheet" type="text/css" href="index.css">
 			<script type="text/javascript" src="menu.js"></script>
 			
-	</head>
+	</head>       
 	<body>
-              <fieldset id="connexion">
+            <?php
+            if(!isset($_SESSION['login']) && !isset($_SESSION['motdepasse']))
+            {
+            ?>
+              <fieldset class="connexion">
                   <form method="post" id="connexion" action="appartements.php">
                 <label for="login">Identifiant:</label>
                 <input type="text" id="login" name="login">
@@ -23,6 +29,7 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
                 <br/>
                 
                 <?php
+            }
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
@@ -32,7 +39,20 @@ if(isset($_POST['login']))
   $mdp=$_POST['mdp'];
   
  $verif= verifUtil($objetPDO, $login, $mdp);
- var_dump($verif);
+ if($verif==true)
+ {
+            ?>
+                <fieldset class="connexion">
+                <?php
+                echo'Bonjour '.$_SESSION['login'];
+                ?>                 
+                </fieldset>
+     
+                <?php
+ }
+                ?>
+     
+ }
     
  
  
