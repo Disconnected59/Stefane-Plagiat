@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php
+
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+       
 ?>
 	<head>
 			<meta charset="UTF-8"/>
@@ -10,11 +12,30 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 				<link rel="stylesheet" type="text/css" href="index.css">
 			<script type="text/javascript" src="menu.js"></script>
 			
-	</head>
+	</head>       
 	<body>
+<<<<<<< HEAD
             
               <fieldset id="connexion">
                    <?php
+=======
+            <?php
+            if(!isset($_SESSION['login']) && !isset($_SESSION['motdepasse']))
+            {
+            ?>
+              <fieldset class="connexion">
+                  <form method="post" id="connexion" action="appartements.php">
+                <label for="login">Identifiant:</label>
+                <input type="text" id="login" name="login">
+                <br/>
+                <br/>
+                <label for="motdepasse">Mot de passe :<label>
+                <input type="password" id="motdepasse" name="mdp">
+                <br/>
+                
+                <?php
+            }
+>>>>>>> 6bfafd3d8fed3dad4d2cf76d0c1b49dc273dfd08
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
@@ -26,6 +47,7 @@ if(isset($_POST['login']))
  $verif= verifUtil($objetPDO, $login, $mdp);
  if($verif==true)
  {
+<<<<<<< HEAD
      echo 'Bienvenue '.$login;
      $_SESSION['login']=$login;
      $_SESSION['mdp']=$mdp;
@@ -35,6 +57,26 @@ if(isset($_POST['login']))
 }
 if(!isset($_SESSION['login']))
 {
+=======
+            ?>
+                <fieldset class="connexion">
+                <?php
+                echo'Bonjour '.$_SESSION['login'];
+                ?>                 
+                </fieldset>
+     
+                <?php
+ }
+                ?>
+     
+ }
+    
+ 
+ 
+}    
+    
+
+>>>>>>> 6bfafd3d8fed3dad4d2cf76d0c1b49dc273dfd08
 ?>
                 <form method="post" id="connexion" action="appartements.php">
                 <label for="login">Identifiant:</label>
