@@ -14,16 +14,45 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 	</head>
 	<body>
               <fieldset id="connexion">
-            <form method="post" id="connexion">
+            
+                   <?php
+include_once 'FonctionsPhp/fonctionsBackOffice.php';
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+
+if(isset($_POST['login']))
+{
+  $login=$_POST['login'];
+  $mdp=$_POST['mdp'];
+  
+ $verif= verifUtil($objetPDO, $login, $mdp);
+ if($verif==true)
+ {
+     echo 'Bienvenue '.$login;
+     $_SESSION['login']=$login;
+     $_SESSION['mdp']=$mdp;
+     $connecte=true;
+     
+ }
+}
+if(!isset($_SESSION['login']))
+{
+?>
+                <form method="post" id="connexion" action="appartements.php">
                 <label for="login">Identifiant:</label>
-                <input type="text" id="login" name="id">
+                <input type="text" id="login" name="login">
                 <br/>
                 <br/>
                 <label for="motdepasse">Mot de passe :<label>
-                <input type="text" id="motdepasse" name="mdp">
+                <input type="password" id="motdepasse" name="mdp">
                 <br/>
-                <input type="submit" name="seconnecter" value="Se connecter">
-           </form> 
+                
+               
+            <input type="submit" value="Se connecter">
+            </form> 
+<?php
+}
+?>
+            
             </fieldset>    
 		<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
