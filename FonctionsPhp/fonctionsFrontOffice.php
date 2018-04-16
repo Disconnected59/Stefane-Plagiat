@@ -40,3 +40,41 @@ function getInfosTerrains ($monPdo,$numTerrain){
     $monObjPdoStatement-> closeCursor();
     return $lesTerrains;
 }
+function getTypeBien($PDO){
+    $PDO = $PDO->prepare("SELECT libelle FROM typebien");
+    $resultat = $PDO->execute();
+    $resultat = $PDO->fetchall();
+    $PDO-> closeCursor();
+    return $resultat;
+}
+function getVille($PDO){
+    $PDO = $PDO->prepare("SELECT DISTINCT ville FROM biens ORDER BY 1");
+    $resultat = $PDO->execute();
+    $resultat = $PDO->fetchall();
+    $PDO-> closeCursor();
+    return $resultat;
+}
+function getPiece($PDO){
+    $PDO = $PDO->prepare("SELECT piece FROM critere");
+    $resultat = $PDO->execute();
+    $resultat = $PDO->fetchall();
+    $PDO-> closeCursor();
+    return $resultat;
+}
+function getSurface($PDO){
+    $PDO = $PDO->prepare("SELECT surface FROM critere");
+    $resultat = $PDO->execute();
+    $resultat = $PDO->fetchall();
+    $PDO-> closeCursor();
+    return $resultat;
+}
+function getPrix($PDO){
+    $PDO = $PDO->prepare("SELECT prix FROM critere");
+    $resultat = $PDO->execute();
+    $resultat = $PDO->fetchall();
+    $PDO-> closeCursor();
+    return $resultat;
+}
+function selectionBien($PDO){
+    
+}

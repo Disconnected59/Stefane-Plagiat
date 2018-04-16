@@ -2,7 +2,8 @@
 <?php
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
-$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+ include_once 'FonctionsPhp/fonctionsFrontOffice.php';
+ $PDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 ?>
 <html lang="fr">
 	<head>
@@ -13,66 +14,56 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
 	</head>
 	<body>
-               <fieldset id="connexion">
+            <fieldset id="connexion">
+                <?php
+                if(isset($_POST['login'])){
+                    $login=$_POST['login'];
+                    $mdp=$_POST['mdp'];
+                    $verif= verifUtil($objetPDO, $login, $mdp);
+                    if($verif==true){
+                        $_SESSION['login']=$login;
+                    }
+                    else{
+                        echo 'Erreur, mot de passe ou login incorrect';
+                    }
+                    }
+                   if(isset($_SESSION['login']))
+                   {
+                       include_once '/include/adminConnecte.inc';
+                   }
+                   else
+                   {
+                   ?>
+                   <form method="post" id="connexion" action="#">
+                   <label for="login">Identifiant:</label>
+                   <input type="text" id="login" name="login">
+                   <br/>
+                   <br/>
+                   <label for="motdepasse">Mot de passe :<label>
+                   <input type="password" id="motdepasse" name="mdp">
+                   <br/>
+                   <input type="submit" value="Se connecter">
+                   </form> 
                    <?php
-include_once 'FonctionsPhp/fonctionsBackOffice.php';
-$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
-
-if(isset($_POST['login']))
-{
-  $login=$_POST['login'];
-  $mdp=$_POST['mdp'];
-  
- $verif= verifUtil($objetPDO, $login, $mdp);
- if($verif==true)
- { 
-     $_SESSION['login']=$login;
-     
- }
- else
- {
-     echo 'Erreur, mot de passe ou login incorrect';
-     
- }
-}
-if(isset($_SESSION['login']))
-{
-    include_once '/include/adminConnecte.inc';
-}
-else
-{
-?>
-                <form method="post" id="connexion" action="#">
-                <label for="login">Identifiant:</label>
-                <input type="text" id="login" name="login">
-                <br/>
-                <br/>
-                <label for="motdepasse">Mot de passe :<label>
-                <input type="password" id="motdepasse" name="mdp">
-                <br/>
-                
-               
-            <input type="submit" value="Se connecter">
-            </form> 
-<?php
-}
-?>
-</fieldset> 
-<?php 
- include_once'/include/menuEtImage.inc';
-?>
+                   }
+                   ?>
+                   </fieldset> 
+                    <?php 
+                     include_once'/include/menuEtImage.inc';
+                    ?>
      
                         <br/><br/><br/>
-			<form method="post" action="Recherche.php">
+			<form method="post" action="#">
 			     <div class="recherche">
 			         <div>
                                      Type de produit:
-                                     <div><input type="radio" name="Type" value="tous" id="tousType" checked/> <label for="tousType">Tous</label></div>
-                                     <div><input type="radio" name="Type" value="Maison" id="maison" /> <label for="maison">Maisons</label></div>
-                                     <div><input type="radio" name="Type" value="Appartement" id="app" /> <label for="app">Appartement</label></div>
-                                     <div><input type="radio" name="Type" value="Immeuble" id="immeuble" /> <label for="immeuble">Immeuble</label></div>
-                                     <div><input type="radio" name="Type" value="Locaux" id="locaux" /> <label for="locaux">Locaux</label></div>
-                                     <div><input type="radio" name="Type" value="Terrain" id="nus" /> <label for="nus">Terrain nus</label></div>
+                                     <?php
+                                     echo("<div><input type='radio' name='Type' value='tous' id='tousType' checked/> <label for='tousType'>Tous</label></div>");
+                                     $Type = getTypeBien($PDO);
+                                     foreach ($Type as $value) {
+                                         echo("<div><input type='radio' name='Type' value=".$value['libelle']." id=".$value['libelle']." /> <label for=".$value['libelle'].">".$value['libelle']."</label></div>");
+                                     }
+                                     ?>
 			         </div>
                                  <div class="marge">
                                      Jardin:
@@ -82,19 +73,26 @@ else
 			         </div>
                                  <div class="marge">
                                      Nombre de pièces:
-                                     <div><input type="radio" name="Piece" value="tous" id="tousPiece" checked/> <label for="tousPiece">Tous</label></div>
-                                     <div><input type="radio" name="Piece" value="0-10" id="10" /> <label for="10">0 à 10</label></div>
-                                     <div><input type="radio" name="Piece" value="11-20" id="20" /> <label for="20">11 à 20</label></div>
-                                     <div><input type="radio" name="Piece" value="21-30" id="30" /> <label for="30">21 à 30</label></div>
-                                     <div><input type="radio" name="Piece" value="31" id="31" /> <label for="31">31 et plus</label></div>
+                                     <?php
+                                     echo("<div><input type='radio' name='Piece' value='tous' id='tousType' checked/> <label for='tousType'>Tous</label></div>");
+                                     $piece = getPiece($PDO);
+                                     foreach ($piece as $value) {
+                                         echo("<div><input type='radio' name='Piece' value=".$value['piece']." id=".$value['piece']." /> <label for=".$value['piece'].">".($value['piece']-10)." à ".$value['piece']."</label></div>");
+                                     }
+                                     echo("<div><input type='radio' name='Piece' value=".($value['piece']+1)." id=".($value['piece']+1)." /> <label for=".$value['piece'].">".($value['piece']+1)." et plus</label></div>");
+                                     ?>
 			         </div>
                                  <div class="marge">
                                      Surface:
-                                     <div><input type="radio" name="surface" value="tous" id="tousSurface" checked/> <label for="tousSurface">Tous</label></div>
-                                     <div><input type="radio" name="surface" value="0-100" id="100" /> <label for="100">0 à 100</label></div>
-                                     <div><input type="radio" name="surface" value="101-300" id="300" /> <label for="300">101 à 300</label></div>
-                                     <div><input type="radio" name="surface" value="301-999" id="999" /> <label for="999">301 à 999</label></div>
-                                     <div><input type="radio" name="surface" value="1001" id="1000" /> <label for="1000">1000 ou plus</label></div>
+                                     <?php
+                                     echo("<div><input type='radio' name='surface' value='tous' id='tousType' checked/> <label for='tousType'>Tous</label></div>");
+                                     $surface = getSurface($PDO);
+                                     foreach ($surface as $value) {
+                                         echo("<div><input type='radio' name='surface' value=".$value['surface']." id=".$value['surface']." /> <label for=".$value['surface'].">".($value['surface']-10)." à ".$value['surface']."</label></div>");
+                                     }
+                                     echo("<div><input type='radio' name='surface' value=".($value['surface']+1)." id=".($value['surface']+1)." /> <label for=".$value['surface'].">".($value['surface']+1)." et plus</label></div>");
+                                     ?>
+                                     
 			         </div>
                                  <div class="marge">
                                      Prix:
@@ -108,7 +106,11 @@ else
                                      location:<br/>
                                      <select name="location">
                                          <?php
-                                         echo "<option value='".d."'>".d."</option>";
+                                         $ville = getVille($PDO);
+                                         var_dump($ville);
+                                            foreach ($ville as $value) {
+                                                echo "<option value='".$value['ville']."'>".$value['ville']."</option>";
+                                            }
                                          ?>
                                      </select>
                                  </div>
