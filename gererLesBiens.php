@@ -7,11 +7,12 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <title>Stefane Plagiat</title>
     </head>
     <body>
         <?php
-        bloup
+        echo 'bloup';
         ?>
     </body>
 </html>

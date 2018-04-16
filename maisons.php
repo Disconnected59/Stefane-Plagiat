@@ -37,7 +37,7 @@ if(isset($_POST['login']))
 }
 if(isset($_SESSION['login']))
 {
-     include_once '/include/adminConnecte.inc';
+    include_once '/include/adminConnecte.inc';
 }
 else
 {
@@ -57,37 +57,11 @@ else
 <?php
 }
 ?>
-            </fieldset> 
-			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
-			<nav>
-				<ul id="menu">
-       				 <li>
-                 		 <a href="index.php">accueil</a>
-        			 </li>
-        
-        			 <li>
-                		 <a href="#">Produits</a>
-                	 		 <ul>
-                        		 <li><a href="maisons.php">Maisons</a></li>
-                        		 <li><a href="appartements.php">Appartements</a></li>
-                        		 <li><a href="locaux.php">Locaux Commerciaux</a></li>
-                             	 <li><a href="immeuble.php">Immeubles</a></li>
-                             	 <li><a href="terrainus.php">Terrains nus</a></li>
-                	 		 </ul>
-
-        			 </li>
-
-        			 <li>
-                		 <a href="#">plus</a>
-                		 	 <ul>
-                                             <li><a href="forum.php">forum</a></li>
-                       			 <li><a href="liens.php">liens</a></li>
-                    		     <li><a href="contact.php">nous contacter</a></li>
-                    		     <li><a href="team.php">team</a></li>
-               				 </ul>
-       				 </li>
-				</ul>
-			</nav><!prix et location>
+</fieldset> 
+<?php 
+ include_once'/include/menuEtImage.inc';
+?>
+     
                         <br/><br/><br/>
 			<form method="post" action="Recherche.php">
 			     <div class="recherche">
@@ -201,24 +175,3 @@ else
 			
 	</body>
 </html>
-<?php
- include_once 'FonctionsPhp/fonctionsBackOffice.php';
-$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
-
-if(isset($_POST['login']))
-{
-  $login=$_POST['login'];
-  $mdp=$_POST['motdepasse'];
-  
- $verif= verifUtil($objetPDO, $login, $mdp);
- if ($verif==true)
- {
-     
- }
-          
-          
-          
-}
-
-      
-?>
