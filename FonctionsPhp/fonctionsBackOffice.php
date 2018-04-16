@@ -51,7 +51,7 @@ function ajouterUnBien($objPDO, $adresse, $surface, $jardin, $nbPieces, $prix, $
 
 function modifierUnBien($objPDO, $numero ,$adresse, $surface, $jardin, $nbPieces, $prix, $ville, $type, $titre, $description)
 {
-   $statement=$objPDO->prepare("UPDATE biens SET(adresse=:adresse, surface=:surface, jardin=:jardin, nbPieces=:nbPieces, prix=:prix, ville=:ville, type=:type, titre=:titre, description=:description) WHERE numero=:numero");
+   $statement=$objPDO->prepare("UPDATE biens SET adresse=:adresse, surface=:surface, jardin=:jardin, nbPieces=:nbPieces, prix=:prix, ville=:ville, type=:type, titre=:titre, description=:description WHERE numero=:numero");
     
     $afftecteValeur=$statement->bindValue(':numero',$numero);
     $affecteValeur=$statement->bindValue(':adresse',$adresse);
@@ -66,6 +66,8 @@ function modifierUnBien($objPDO, $numero ,$adresse, $surface, $jardin, $nbPieces
     
     $verifExecution=$statement->execute();  
     
+    
+    
     return $verifExecution;
 }
 
@@ -73,7 +75,7 @@ function supprimerUnBien($objPDO, $numero)
 {
     $statement=$objPDO->prepare("DELETE FROM biens WHERE numero=:numero");
     $afftecteValeur=$statement->bindValue(':numero',$numero);
-    $verifExecution=$statement->execute();   
+    $verifExecution=$statement->execute();       
     return $verifExecution;
 }
 

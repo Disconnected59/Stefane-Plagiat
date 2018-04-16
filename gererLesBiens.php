@@ -11,7 +11,14 @@ and open the template in the editor.
         <title>Stefane Plagiat</title>
     </head>
     <body>
+        <?php
+        if(isset($_SESSION['login']))
+        {
+        include_once'/include/adminConnecte.inc';
+        }
+        include_once'/include/menuEtImage.inc';
         
+        ?>
         <div class='conteneur'>   
         <fieldset id='ajouterBien' class='contenu'>
             <label for='ajouterBien'>Remplissez ce formulaire pour ajouter un produit à la BDD</label>    
@@ -52,13 +59,13 @@ and open the template in the editor.
                 <input type="text" id="description" name="descriptionAjou">
                 <br/>
                 <br/>                
-                <input type="submit" value="Se connecter" name='btnAjou'>
+                <input type="submit" value="Ajouter" name='btnAjou'>
             </form> 
         </fieldset>
         
          <fieldset id='modifierBien' class='contenu'>
             <label for='modifierBien'>Remplissez ce formulaire pour modifier un produit de la BDD</label>    
-            <form method="post" id="ajouter" action="#">
+            <form method="post" id="ajouter" action="modifierUnBien.php">
                 <label for="numero">Numero :</label>
                 <input type="text" id="numero" name="numeroModif">
                 <br/>
@@ -104,11 +111,12 @@ and open the template in the editor.
         </fieldset>
         
         <fieldset id='supprimerBien' class="contenu">
-            <form action="#">
+            <form action="supprimerUnBien.php">
                 <label for='supprimerBien'>Entrez le numéro du Bien à Supprimer</label>
-                <input type="text" id='supprimer'>
+                </br>
+                <input type="text" id='supprimer' name="numeroSuppr">
                 <br/>
-                <input type='submit' value="Supprimer" name='supprimerProduit'> 
+                <input type='submit' value="Supprimer" name='supprimerBien'> 
             </form>
         </fieldset>           
         </div>
