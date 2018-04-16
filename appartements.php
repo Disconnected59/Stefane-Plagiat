@@ -1,39 +1,21 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <?php
-/*
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
-       
 ?>
+<html lang="fr">
 	<head>
-			<meta charset="UTF-8"/>
-			<title>Appartements à vendre : </title>
-				<link rel="stylesheet" type="text/css" href="index.css">
+			<meta charset="UTF-8" />
+			<title>Stefane Plagiat</title>
+			<link rel="stylesheet" type="text/css" href="index.css">
 			<script type="text/javascript" src="menu.js"></script>
-			
-	</head>       
+
+	</head>
 	<body>
-
-              <fieldset id="connexion">
+               <fieldset id="connexion">
                    <?php
-
-            <?php
-            if(!isset($_SESSION['login']) && !isset($_SESSION['motdepasse']))
-            {
-            ?>
-              <fieldset class="connexion">
-                  <form method="post" id="connexion" action="appartements.php">
-                <label for="login">Identifiant:</label>
-                <input type="text" id="login" name="login">
-                <br/>
-                <br/>
-                <label for="motdepasse">Mot de passe :<label>
-                <input type="password" id="motdepasse" name="mdp">
-                <br/>
-                
-                <?php
-            }
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
@@ -44,34 +26,22 @@ if(isset($_POST['login']))
   
  $verif= verifUtil($objetPDO, $login, $mdp);
  if($verif==true)
- {
-
-     echo 'Bienvenue '.$login;
+ { 
      $_SESSION['login']=$login;
-     $_SESSION['mdp']=$mdp;
-     $connecte=true;
+     
+ }
+ else
+ {
+     echo 'Erreur, mot de passe ou login incorrect';
      
  }
 }
-if(!isset($_SESSION['login']))
+if(isset($_SESSION['login']))
 {
-
-            ?>
-                <fieldset class="connexion">
-                <?php
-                echo'Bonjour '.$_SESSION['login'];
-                ?>                 
-           
-     
-                <?php
- }
-                ?>
-     
- }
-    
- 
- 
-}    
+    echo 'Bienvenue'.$_SESSION['login'];
+}
+else
+{
 ?>
                 <form method="post" id="connexion" action="appartements.php">
                 <label for="login">Identifiant:</label>
@@ -88,7 +58,7 @@ if(!isset($_SESSION['login']))
 <?php
 }
 ?>
-            </fieldset>    
+            </fieldset> 
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">
@@ -209,7 +179,7 @@ if(!isset($_SESSION['login']))
         </body>               
 </html>                       
         
-*/
+
 
  ?>        
         
