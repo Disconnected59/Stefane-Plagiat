@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 25 mars 2018 à 18:02
+-- Généré le :  lun. 16 avr. 2018 à 12:06
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -40,6 +40,8 @@ CREATE TABLE IF NOT EXISTS `biens` (
   `prix` int(11) NOT NULL,
   `ville` varchar(20) NOT NULL,
   `type` int(11) NOT NULL,
+  `titre` varchar(50) NOT NULL,
+  `description` varchar(500) NOT NULL,
   PRIMARY KEY (`numero`),
   KEY `type` (`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
@@ -48,28 +50,28 @@ CREATE TABLE IF NOT EXISTS `biens` (
 -- Déchargement des données de la table `biens`
 --
 
-INSERT INTO `biens` (`numero`, `adresse`, `surface`, `jardin`, `nbPieces`, `prix`, `ville`, `type`) VALUES
-(1, '27 rue de Lachelite', 215, 'oui', 10, 800000, 'Flours', 1),
-(2, '43 rue de Lichnerre', 128, 'oui', 8, 148240, 'Flers', 1),
-(3, '38 rue du Tapis', 118, 'oui', 6, 415360, 'Audierne', 1),
-(4, '17 rue des Pommiers', 157, 'oui', 9, 352820, 'Bignou', 1),
-(5, '52 rue Cocinelle', 146, 'non', 146, 353600, 'Pornichet', 1),
-(6, '5 rue Lavoisier', 45, 'non', 2, 156000, 'Leers', 2),
-(7, '12 rue Poitije', 40, 'non', 2, 156000, 'Saint-Maurice', 2),
-(8, '19 rue Patate', 51, 'non', 3, 165000, 'Nice', 2),
-(9, '11 rue Loupite', 50, 'non', 2, 265000, 'Levallois', 2),
-(10, '95 rue Maurice', 36, 'non', 2, 250000, 'Paris', 2),
-(11, '52 rue de la Balade', 32, 'non', 2, 260000, 'Galande', 2),
-(12, '27 rue Hospote', 36, 'non', 2, 165000, 'Muette', 2),
-(13, '14 rue Klagoun', 162, 'non', 32, 752000, 'Lille', 3),
-(14, '23 rue Jaures', 400, 'non', 8, 950000, 'Roubaix', 3),
-(15, '26 rue Louvre', 90, 'oui', 9, 854200, 'Marseille', 3),
-(16, '27 rue Mer', 848, 'non', 80, 1400000, 'Bourget', 4),
-(17, '42 rue Pavis', 820, 'non', 59, 990000, 'Luxe', 4),
-(18, '46 rue Lavoisier', 150, 'oui', 0, 80000, 'Bloup', 5),
-(19, '57 rue Loupille', 1000, 'oui', 0, 150000, 'Basses', 5),
-(20, '62 rue Belleverte', 750, 'oui', 0, 85000, 'Bignou', 5),
-(21, '75 rue Lafoison', 686, 'oui', 0, 152258, 'Iledyeu', 5);
+INSERT INTO `biens` (`numero`, `adresse`, `surface`, `jardin`, `nbPieces`, `prix`, `ville`, `type`, `titre`, `description`) VALUES
+(1, '27 rue de Lachelite', 215, 'oui', 10, 800000, 'Flours', 1, 'Maison d\'architecte originale', 'Maison plein pied - 10 pièces - 215m²'),
+(2, '43 rue de Lichnerre', 128, 'oui', 8, 148240, 'Flers', 1, 'Maison à vendre Flers', 'Maison deux étages - 8 pièces - 128m²'),
+(3, '38 rue du Tapis', 118, 'oui', 6, 415360, 'Audierne', 1, 'Maison à vendre Audierne', 'Maison deux étages et cave - 6 pièces - 118m²'),
+(4, '17 rue des Pommiers', 157, 'oui', 9, 352820, 'Bignou', 1, 'Maison à vendre Bignou', 'Maison deux étages avec grenier - 9 pièces - 157m²'),
+(5, '52 rue Cocinelle', 146, 'non', 146, 353600, 'Pornichet', 1, 'Maison à vendre Pornichet', 'Maison deux étages - 8 pièces - 146m²'),
+(6, '5 rue Lavoisier', 45, 'non', 2, 156000, 'Leers', 2, 'Appartement Leers', 'Appartement 2 Pièces 44,83 m2'),
+(7, '12 rue Poitije', 40, 'non', 2, 156000, 'Saint-Maurice', 2, 'Appartement Saint-Maur-Des-Fosses', 'Vente appartement 2 pièces 40 m² Saint-Maur-Des-Fosses (94)'),
+(8, '19 rue Patate', 51, 'non', 3, 165000, 'Nice', 2, 'Appartement Saint-Maur-Des-Fosses', 'Vente appartement 3 pièces 51 m² Nice'),
+(9, '11 rue Loupite', 50, 'non', 2, 265000, 'Levallois', 2, 'Appartement Levallois-Perret', 'Vente appartement 2 pièces 50 m² Levallois-Perret (92300)'),
+(10, '95 rue Maurice', 36, 'non', 2, 250000, 'Paris', 2, 'Appartement à Paris', 'charmant loft de 2 pièces au dernier étage avec ascenseur 36m²'),
+(11, '52 rue de la Balade', 32, 'non', 2, 260000, 'Galande', 2, 'Appartement à Galande', 'Appartement T1 Bis de 31,55 m² LC non meublé situé au 4ème étage d\'un immeuble sécurisé de 1600'),
+(12, '27 rue Hospote', 36, 'non', 2, 165000, 'Muette', 2, 'Appartement à Muette', 'charmant loft de 2 pièces au dernier étage avec ascenseur 36m²'),
+(13, '14 rue Klagoun', 162, 'non', 32, 752000, 'Lille', 3, 'Local LE SEDAF', ' local a louer - 162m² - 310€/m²/an'),
+(14, '23 rue Jaures', 400, 'non', 8, 950000, 'Roubaix', 3, 'Local Show Room type loft', 'local a louer - 400m² - 600€/m²/an'),
+(15, '26 rue Louvre', 90, 'oui', 9, 854200, 'Marseille', 3, 'Local Galerie d’Art au Cœur de Saint Germain', ' local a louer - 90m² - 1000€/m²/an'),
+(16, '27 rue Mer', 848, 'non', 80, 1400000, 'Bourget', 4, 'Vente immeuble Le Bourget (93350)', '10 appartements, 5 garages dans 2 immeubles sur terrain 848 m²'),
+(17, '42 rue Pavis', 820, 'non', 59, 990000, 'Luxe', 4, 'Vente immeuble Portugal', 'Residence de Luxe 820m²'),
+(18, '46 rue Lavoisier', 150, 'oui', 0, 80000, 'Bloup', 5, 'Terrain 500m² Boisemont', ' terrain 500 m² Boisemont (95000)'),
+(19, '57 rue Loupille', 1000, 'oui', 0, 150000, 'Basses', 5, 'Terrain 1.000 m² Basses', 'Vente terrain 1.000 m² Basses (86200)'),
+(20, '62 rue Belleverte', 750, 'oui', 0, 85000, 'Bignou', 5, 'Terrain 750m²', 'Vente terrain 750m² Bignou'),
+(21, '75 rue Lafoison', 686, 'oui', 0, 152258, 'Iledyeu', 5, 'Terrain 686 m²', 'terrain 686 m² L\'ile-D\'yeu (85350)');
 
 -- --------------------------------------------------------
 
@@ -187,7 +189,7 @@ INSERT INTO `typebien` (`numero`, `libelle`) VALUES
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id` varchar(12) NOT NULL,
-  `Mot de passe` varchar(12) NOT NULL,
+  `mdp` varchar(12) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -195,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id`, `Mot de passe`) VALUES
+INSERT INTO `utilisateur` (`id`, `mdp`) VALUES
 ('admin', 'admin');
 
 --
