@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-
+/*
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
@@ -14,11 +14,10 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 			
 	</head>       
 	<body>
-<<<<<<< HEAD
-            
+
               <fieldset id="connexion">
                    <?php
-=======
+
             <?php
             if(!isset($_SESSION['login']) && !isset($_SESSION['motdepasse']))
             {
@@ -35,7 +34,6 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
                 
                 <?php
             }
->>>>>>> 6bfafd3d8fed3dad4d2cf76d0c1b49dc273dfd08
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
@@ -47,7 +45,7 @@ if(isset($_POST['login']))
  $verif= verifUtil($objetPDO, $login, $mdp);
  if($verif==true)
  {
-<<<<<<< HEAD
+
      echo 'Bienvenue '.$login;
      $_SESSION['login']=$login;
      $_SESSION['mdp']=$mdp;
@@ -57,13 +55,13 @@ if(isset($_POST['login']))
 }
 if(!isset($_SESSION['login']))
 {
-=======
+
             ?>
                 <fieldset class="connexion">
                 <?php
                 echo'Bonjour '.$_SESSION['login'];
                 ?>                 
-                </fieldset>
+           
      
                 <?php
  }
@@ -74,9 +72,6 @@ if(!isset($_SESSION['login']))
  
  
 }    
-    
-
->>>>>>> 6bfafd3d8fed3dad4d2cf76d0c1b49dc273dfd08
 ?>
                 <form method="post" id="connexion" action="appartements.php">
                 <label for="login">Identifiant:</label>
@@ -214,9 +209,9 @@ if(!isset($_SESSION['login']))
         </body>               
 </html>                       
         
+*/
 
-
-         
+ ?>        
         
       
 

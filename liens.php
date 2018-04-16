@@ -26,17 +26,21 @@ if(isset($_POST['login']))
  $verif= verifUtil($objetPDO, $login, $mdp);
  if($verif==true)
  {
-     echo 'Bienvenue '.$login;
+    
      $_SESSION['login']=$login;
      $_SESSION['mdp']=$mdp;
      $connecte=true;
      
  }
 }
-if(!isset($_SESSION['login']))
+if(isset($_SESSION['login']))
+{
+     echo 'Bienvenue '.$login;
+}
+else
 {
 ?>
-                <form method="post" id="connexion" action="appartements.php">
+                <form method="post" id="connexion" action="#">
                 <label for="login">Identifiant:</label>
                 <input type="text" id="login" name="login">
                 <br/>

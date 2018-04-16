@@ -37,7 +37,7 @@ if(isset($_POST['login']))
 if(!isset($_SESSION['login']))
 {
 ?>
-                <form method="post" id="connexion" action="appartements.php">
+                <form method="post" id="connexion" action="#">
                 <label for="login">Identifiant:</label>
                 <input type="text" id="login" name="login">
                 <br/>
