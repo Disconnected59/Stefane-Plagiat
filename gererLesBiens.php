@@ -7,11 +7,60 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <title>Stefane Plagiat</title>
     </head>
     <body>
-        <?php
-        bloup
-        ?>
+        
+        <fieldset id='ajouterBien'>
+        <label for='ajouter'>Remplissez ce formulaire pour ajouter un produit à la BDD</label>    
+         <form method="post" id="ajouter" action="#">
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                <label for="surface">Surface :<label>
+                <input type="text" id="surface" name="surface">
+                <br/>
+                <br/>
+                
+                
+               
+            <input type="submit" value="Se connecter">
+        </form> 
+        </fieldset>
+        
+        
+        
+        
+        
     </body>
 </html>
