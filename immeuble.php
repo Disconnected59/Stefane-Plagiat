@@ -13,8 +13,7 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
 	</head>
 	<body>
-             
-            <fieldset id="connexion">
+               <fieldset id="connexion">
                    <?php
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
@@ -26,18 +25,24 @@ if(isset($_POST['login']))
   
  $verif= verifUtil($objetPDO, $login, $mdp);
  if($verif==true)
- {
-     echo 'Bienvenue '.$login;
+ { 
      $_SESSION['login']=$login;
-     $_SESSION['mdp']=$mdp;
-     $connecte=true;
+     
+ }
+ else
+ {
+     echo 'Erreur, mot de passe ou login incorrect';
      
  }
 }
-if(!isset($_SESSION['login']))
+if(isset($_SESSION['login']))
+{
+     include_once '/include/adminConnecte.inc';
+}
+else
 {
 ?>
-                <form method="post" id="connexion" action="#">
+                <form method="post" id="connexion" action="appartements.php">
                 <label for="login">Identifiant:</label>
                 <input type="text" id="login" name="login">
                 <br/>
@@ -52,7 +57,7 @@ if(!isset($_SESSION['login']))
 <?php
 }
 ?>
-            </fieldset>    
+            </fieldset> 
 			<p class="titre"><img src="pictures/logo.png" class="titre" alt="bande du site"></p>
 			<nav>
 				<ul id="menu">

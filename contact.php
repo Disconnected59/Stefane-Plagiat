@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
 <?php
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 ?>
+<html lang="fr">
 	<head>
-			<meta charset="UTF-8"/>
-			<title>Contact</title>
-				<link rel="stylesheet" type="text/css" href="index.css">
+			<meta charset="UTF-8" />
+			<title>Stefane Plagiat</title>
+			<link rel="stylesheet" type="text/css" href="index.css">
 			<script type="text/javascript" src="menu.js"></script>
-			
+
 	</head>
 	<body>
-              <fieldset id="connexion">
+               <fieldset id="connexion">
                    <?php
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
@@ -24,15 +24,21 @@ if(isset($_POST['login']))
   
  $verif= verifUtil($objetPDO, $login, $mdp);
  if($verif==true)
- {
-     echo 'Bienvenue '.$login;
+ { 
      $_SESSION['login']=$login;
-     $_SESSION['mdp']=$mdp;
-     $connecte=true;
+     
+ }
+ else
+ {
+     echo 'Erreur, mot de passe ou login incorrect';
      
  }
 }
-if(!isset($_SESSION['login']))
+if(isset($_SESSION['login']))
+{
+     include_once '/include/adminConnecte.inc';
+}
+else
 {
 ?>
                 <form method="post" id="connexion" action="appartements.php">

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
@@ -25,15 +24,21 @@ if(isset($_POST['login']))
   
  $verif= verifUtil($objetPDO, $login, $mdp);
  if($verif==true)
- {
-     echo 'Bienvenue '.$login;
+ { 
      $_SESSION['login']=$login;
-     $_SESSION['mdp']=$mdp;
-     $connecte=true;
+     
+ }
+ else
+ {
+     echo 'Erreur, mot de passe ou login incorrect';
      
  }
 }
-if(!isset($_SESSION['login']))
+if(isset($_SESSION['login']))
+{
+   include_once '/include/adminConnecte.inc';
+}
+else
 {
 ?>
                 <form method="post" id="connexion" action="appartements.php">

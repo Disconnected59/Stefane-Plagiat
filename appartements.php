@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <?php
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
@@ -38,7 +37,7 @@ if(isset($_POST['login']))
 }
 if(isset($_SESSION['login']))
 {
-    echo 'Bienvenue'.$_SESSION['login'];
+    include_once '/include/adminConnecte.inc';
 }
 else
 {
