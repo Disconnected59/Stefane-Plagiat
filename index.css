@@ -264,3 +264,12 @@ div.contoursmaison:hover{
     
 }
 
+.ajouterBien input{
+    float:right;
+    
+}
+
+.modifierBien input {
+    float: right;
+    
+}
