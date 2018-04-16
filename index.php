@@ -41,7 +41,7 @@ if(isset($_SESSION['login']))
 else
 {
 ?>
-                <form method="post" id="connexion" action="appartements.php">
+                <form method="post" id="connexion" action="#">
                 <label for="login">Identifiant:</label>
                 <input type="text" id="login" name="login">
                 <br/>
@@ -107,26 +107,6 @@ else
 	</body>
 </html>
 
-<?php
- include_once 'FonctionsPhp/fonctionsBackOffice.php';
-$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
-if(isset($_POST['login']))
-{
-  $login=$_POST['login'];
-  $mdp=$_POST['motdepasse'];
-  
- $verif= verifUtil($objetPDO, $login, $mdp);
- if ($verif==true)
- {
-     
- }
-          
-          
-          
-}
-
-      
-?>
 
 	

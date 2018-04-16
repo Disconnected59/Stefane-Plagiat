@@ -42,7 +42,7 @@ if(isset($_SESSION['login']))
 else
 {
 ?>
-                <form method="post" id="connexion" action="appartements.php">
+                <form method="post" id="connexion" action="#">
                 <label for="login">Identifiant:</label>
                 <input type="text" id="login" name="login">
                 <br/>
