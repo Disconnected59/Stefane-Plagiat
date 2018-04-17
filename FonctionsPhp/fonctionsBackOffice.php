@@ -65,17 +65,30 @@ function modifierUnBien($objPDO, $numero ,$adresse, $surface, $jardin, $nbPieces
     $affecteValeur=$statement->bindValue(':description',$description);
     
     $verifExecution=$statement->execute();  
+    $lignesAffectée=$statement->rowCount();
+    $verif=false;
+    if($lignesAffectée>0)
+    {
+        $verif=true;
+    }
     
     
-    
-    return $verifExecution;
+    return $verif;
 }
 
 function supprimerUnBien($objPDO, $numero)
 {
-    $statement=$objPDO->prepare("DELETE FROM biens WHERE numero=:numero");
+    $statement=$objPDO->prepare("DELETE FROM biens WHERE numero= :numero");
     $afftecteValeur=$statement->bindValue(':numero',$numero);
     $verifExecution=$statement->execute();       
-    return $verifExecution;
+    $lignesAffectée=$statement->rowCount();
+    $verif=false;
+    if($lignesAffectée>0)
+    {
+        $verif=true;
+    }
+    
+    
+    return $verif;
 }
 

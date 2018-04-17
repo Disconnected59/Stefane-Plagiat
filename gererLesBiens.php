@@ -114,7 +114,7 @@ and open the template in the editor.
             <form action="supprimerUnBien.php">
                 <label for='supprimerBien'>Entrez le numéro du Bien à Supprimer</label>
                 </br>
-                <input type="text" id='supprimer' name="numeroSuppr">
+                <input type="text" id="numeroSuppr" name="numeroSuppr">
                 <br/>
                 <input type='submit' value="Supprimer" name='supprimerBien'> 
             </form>
