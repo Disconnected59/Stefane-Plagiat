@@ -111,7 +111,24 @@ function getPrix($PDO){
     return $resultat;
 }
 function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
-    
+    $eType = "=";
+    $eJardin = "=";
+    //$ePiece = "=";
+    //$eSurface = "=";
+    //$ePrix = "=";
+    $eLoc = "=";
+    if ($type == "tous"){
+        $type = 0;
+        $eType = "!=";
+    }
+    if ($jardin == "tous"){
+        $jardin = 0;
+        $eJardin = "!=";
+    }
+    if ($loc == "tous"){
+        $loc = 0;
+        $eLoc = "!=";
+    }
     $PDO = $PDO->prepare("SELECT prix FROM critere");
     $resultat = $PDO->execute();
     $resultat = $PDO->fetchall();
