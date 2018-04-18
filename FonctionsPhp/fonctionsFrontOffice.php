@@ -129,23 +129,35 @@ function getPrix($PDO){
     return $resultat;
 }
 function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
-    $eType = "=";
-    $eJardin = "=";
+    $eType = " = ";
+    $eJardin = " = ";
     $ePiece = ($piece - 10);
     $eSurface = ($surface - 200);
     $ePrix = ($prix - 200000);
-    $eLoc = "=";
+    $eLoc = " = ";
     if ($type == "tous"){
         $type = 0;
-        $eType = "!=";
+        $eType = " <> ";
     }
     if ($jardin == "tous"){
-        $jardin = 0;
-        $eJardin = "!=";
+        $jardin = 'rien';
+        $eJardin = " <> ";
     }
     if ($loc == "tous"){
-        $loc = 0;
-        $eLoc = "!=";
+        $loc = 'rien';
+        $eLoc = " <> ";
+    }
+    if ($piece == "tous"){
+        $piece = 99999999999999;
+        $ePiece = 0;
+    }
+    if ($surface == "tous"){
+        $surface = 99999999999999;
+        $eSurface = 0;
+    }
+    if ($prix == "tous"){
+        $prix = 99999999999999;
+        $ePrix = 0;
     }
     $string = ("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece AND surface BETWEEN :eSurface AND :surface AND prix BETWEEN :ePrix AND :prix");
     $PDO = $PDO->prepare($string);
