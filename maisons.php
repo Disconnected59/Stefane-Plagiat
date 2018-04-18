@@ -51,7 +51,6 @@ session_start();
                     <?php 
                      include_once'/include/menuEtImage.inc';
                     ?>
-     
                         <br/><br/><br/>
 			<form method="post" action="#">
 			     <div class="recherche">
@@ -68,8 +67,8 @@ session_start();
                                  <div class="marge">
                                      Jardin:
                                      <div><input type="radio" name="Jardin" value="tous" id="tousJardin" checked/> <label for="tousJardin">Tous</label></div>
-                                     <div><input type="radio" name="Jardin" value="Oui" id="oui" /> <label for="oui">Oui</label></div>
-                                     <div><input type="radio" name="Jardin" value="Non" id="non" /> <label for="non">Non</label></div>
+                                     <div><input type="radio" name="Jardin" value="oui" id="oui" /> <label for="oui">Oui</label></div>
+                                     <div><input type="radio" name="Jardin" value="non" id="non" /> <label for="non">Non</label></div>
 			         </div>
                                  <div class="marge">
                                      Nombre de pièces:
@@ -178,6 +177,5 @@ session_start();
 			<a href="Maisons/maison5.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
 			</div>
 			 </div>
-			
 	</body>
 </html>
