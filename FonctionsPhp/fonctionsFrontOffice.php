@@ -110,6 +110,11 @@ function getPrix($PDO){
     $PDO-> closeCursor();
     return $resultat;
 }
-function selectionBien($PDO){
+function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
     
+    $PDO = $PDO->prepare("SELECT prix FROM critere");
+    $resultat = $PDO->execute();
+    $resultat = $PDO->fetchall();
+    $PDO-> closeCursor();
+    return $resultat;
 }
