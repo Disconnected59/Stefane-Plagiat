@@ -133,7 +133,7 @@ session_start();
                         foreach ($mesMaisons as $maMaison){
                         echo '<div class="contoursmaison">';
 				echo "<h2>".$maMaison['titre']."</h2>";
-				echo '<p> <img src="'.$maMaison['image'].'" alt="Image de la maison">';
+				echo '<p> <img src="'.$maMaison['image'].'" width="300" height="auto" alt="Image de la maison">';
 				echo $maMaison['description']." </p>";
                         echo '<p class="prix"> '.$maMaison['prix'].'€ </p>';
 			echo '<div align="right">';

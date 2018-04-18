@@ -42,7 +42,7 @@ function getInfosLocal ($monPdo,$numLocaux){
     return $leLocal;
 }
 
-function getInfosLocaux ($monPdo,$numLocaux){
+function getInfosLocaux ($monPdo){
     $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where type=3");
     $executionOk = $monObjPdoStatement->execute();
     $lesLocaux = $monObjPdoStatement->fetchAll();
@@ -53,11 +53,21 @@ function getInfosLocaux ($monPdo,$numLocaux){
 function getInfosImmeuble ($monPdo,$numImmeuble){
     $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where type=4 and numero='".$numImmeuble."'");
     $executionOk = $monObjPdoStatement->execute();
-    $lesImmeubles = $monObjPdoStatement->fetchall();
+    $lesImmeubles = $monObjPdoStatement->fetch();
+    $monObjPdoStatement-> closeCursor();
+    return $lesImmeubles;
+}
+    
+
+    function getInfosImmeubles ($monPdo){
+    $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where type=4");
+    $executionOk = $monObjPdoStatement->execute();
+    $lesImmeubles = $monObjPdoStatement->fetchAll();
     $monObjPdoStatement-> closeCursor();
     return $lesImmeubles;
     
 }
+
 
 function getInfosTerrain ($monPdo,$numTerrain){
     $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where type=5 and numero='".$numTerrain."'");
@@ -67,8 +77,8 @@ function getInfosTerrain ($monPdo,$numTerrain){
     return $leTerrain;
 }
 
-function getInfosTerrains ($monPdo,$numTerrain){
-    $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where type=5 and numero='".$numTerrain."'");
+function getInfosTerrains ($monPdo){
+    $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where type=5");
     $executionOk = $monObjPdoStatement->execute();
     $lesTerrains = $monObjPdoStatement->fetchAll();
     $monObjPdoStatement-> closeCursor();
