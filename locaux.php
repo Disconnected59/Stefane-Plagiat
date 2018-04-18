@@ -2,6 +2,7 @@
 <?php
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
+ include_once 'FonctionsPhp/fonctionsFrontOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 ?>
 <html lang="fr">
@@ -67,31 +68,21 @@ else
 			</div>
 	
 			<div class="contoursmaison">
-			<h2> Local LE SEDAF </h2>					
-			<p> <img src="pictures/Locaux/locaux1.jpg" alt="Image du premier Local">
-			  local a louer - 162m² - 310€/m²/an </p>
-			<div align="right">
-			<a href="Locaux/Locaux1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			</div>
-			
-			<div class="contoursmaison">
-			<h2> Local Show Room type loft </h2>
-			<p> <img src="pictures/Locaux/locaux2.jpg"alt="Image du second Local"><br>
-			 local a louer - 400m² - 600€/m²/an </p>
-			 <div align="right">
-			<a href="Locaux/Locaux2.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			</div>
-			 
-			 <div class="contoursmaison">
-			 <h2> Local Galerie d’Art au Cœur de Saint Germain </h2>
-			<p> <img src="pictures/Locaux/locaux3.jpg"alt="Image du troisieme local">
-			 local a louer - 90m² - 1000€/m²/an </p>
-			<div align="right">
-			<a href="Locaux/Locaux3.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			</div>		
+			<?php
+                        $mesMaisons= getInfosLocaux($objetPDO);
+                        foreach ($mesMaisons as $maMaison){
+                        echo '<div class="contoursmaison">';
+				echo "<h2>".$maMaison['titre']."</h2>";
+				echo '<p> <img src="'.$maMaison['image'].'" width="300" height="auto" alt="Image de la maison">';
+				echo $maMaison['description']." </p>";
+                        echo '<p class="prix"> '.$maMaison['prix'].'€ </p>';
+			echo '<div align="right">';
+			echo '<a href="maison1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
+			echo '</div>';
+                        
+			echo '</div>';
+                        }
+                        ?>		
 </body>		
 
 </html>
