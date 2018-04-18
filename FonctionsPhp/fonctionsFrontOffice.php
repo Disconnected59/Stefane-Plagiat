@@ -113,9 +113,9 @@ function getPrix($PDO){
 function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
     $eType = "=";
     $eJardin = "=";
-    //$ePiece = "=";
-    //$eSurface = "=";
-    //$ePrix = "=";
+    $ePiece = $piece - 10;
+    $eSurface = $surface - 200;
+    $ePrix = $prix - 200000;
     $eLoc = "=";
     if ($type == "tous"){
         $type = 0;
@@ -129,7 +129,9 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
         $loc = 0;
         $eLoc = "!=";
     }
-    $PDO = $PDO->prepare("SELECT prix FROM critere");
+    
+    $PDO = $PDO->prepare("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND ");
+    $PDO = $PDO->bindValue(':login',$login);
     $resultat = $PDO->execute();
     $resultat = $PDO->fetchall();
     $PDO-> closeCursor();
