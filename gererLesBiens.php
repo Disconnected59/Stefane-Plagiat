@@ -111,17 +111,44 @@ and open the template in the editor.
         </fieldset>
         
         <fieldset id='supprimerBien' class="contenu">
-            <form action="supprimerUnBien.php">
+            <form method="post" action="supprimerUnBien.php">
                 <label for='supprimerBien'>Entrez le numéro du Bien à Supprimer</label>
                 </br>
-                <input type="text" id="numeroSuppr" name="numeroSuppr">
+                <input type="text" id="supprimerBien" name="numeroSuppr">
                 <br/>
-                <input type='submit' value="Supprimer" name='supprimerBien'> 
+                <input type="submit" value="Supprimer" name="supprimerBien"> 
             </form>
         </fieldset>           
         </div>
         
-        
+        <fieldset id="ajouterImage" class="contenu">
+            <label for='ajouterImage'>Remplissez ce formulaire pour ajouter une Image à un bien</label>
+            <form method="post" action="ajouterUneImage.php">
+                <label for="numeroBien">Entrez le numero du Bien auquel ajouter l'image</label>
+                <br/>
+                <input type='text' id='numeroBien' name='numImageBien'>
+                <br/>
+                <!-- <select name='listeNumeros' id='numerosBiens'> 
+                <?php
+                /*
+                $i=1;
+                       $lesNumerosBiens=recupNumBien($objetPDO);
+                       foreach($lesNumerosBiens as $unNumero)
+                       {
+                          echo '<option value="'.$i.'">'.$unNumero['numero'].'</option>';
+                          $i++;
+                       }
+                */
+                ?>
+               </select> -->
+                <label for='lienImage'>Entrez le lien de l'image à ajouter</label>
+                <br/>
+                <input type='text' id="lienImage" name='lienImage'>
+                <br/>
+                
+                <input type='submit' value='Ajouter image' name='ajouImage'>             
+            </form>
+        </fieldset>
         
         
         

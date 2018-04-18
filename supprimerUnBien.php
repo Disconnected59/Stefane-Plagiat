@@ -11,6 +11,8 @@ include_once'/include/menuEtImage.inc';
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
 $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
+
+
 if(isset($_POST['numeroSuppr']))
 {
     $numero=$_POST['numeroSuppr'];
@@ -25,9 +27,6 @@ if(isset($_POST['numeroSuppr']))
    {
        echo 'Erreur, le bien n\'a pas été supprimé';
    }
-  
-    
-    
 }
 
 ?>

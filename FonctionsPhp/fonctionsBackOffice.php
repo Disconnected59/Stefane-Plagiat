@@ -79,7 +79,7 @@ function modifierUnBien($objPDO, $numero ,$adresse, $surface, $jardin, $nbPieces
 function supprimerUnBien($objPDO, $numero)
 {
     $statement=$objPDO->prepare("DELETE FROM biens WHERE numero= :numero");
-    $afftecteValeur=$statement->bindValue(':numero',$numero);
+    $affecteValeur=$statement->bindValue(':numero',$numero);
     $verifExecution=$statement->execute();       
     $lignesAffectée=$statement->rowCount();
     $verif=false;
@@ -92,3 +92,25 @@ function supprimerUnBien($objPDO, $numero)
     return $verif;
 }
 
+function recupNumBien($objPDO)
+{
+    $statement=$objPDO->prepare("SELECT numero FROM biens");
+    $statement->execute();
+    $resultat=$stetement->fetchAll();
+    return $resultat;
+}
+
+function ajouterImage($objPDO, $numero, $lienImage)
+{
+    $statement=$objPDO->prepare("INSERT INTO images VALUES(:lien, :numero)");
+    $affecteValeur=$statement->bindValue(':lien',$lienImage);
+    $affecteValeur=$statement->bindValue(':numero',$numero);
+    $statement->execute();
+    $lignesAffectées=$statement->rowCount();
+    $verif=false;
+    if($lignesAffectées>0)
+    {
+        $verif=true;
+    }
+     return $verif;
+}
