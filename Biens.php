@@ -131,57 +131,18 @@ session_start();
                 echo"";
             }
             else{
-        ?>
-                <div class="contoursmaison">
-				<h2> Maison d'architecte originale </h2>
-				<p> <img src="http://upload.dinhosting.fr/l/b/J/maison1.jpg" alt="Image de la première maison">
-				Maison plein pied - 10 pièces - 215m² </p>
-				<p class="prix"> 800 000€ </p>
-			<div align="right">
-			<a href="Maisons/maison1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			</div>
-			
-			<div class="contoursmaison">
-			<h2> Maison à vendre Flers </h2>
-			<p> <img src="http://upload.dinhosting.fr/X/l/L/maison2.jpg" alt="Image de la seconde maison"><br>
-			 Maison deux étages - 8 pièces - 128m²</p>    
-			 <p class="prix">148 240€ </p>
-			 <div align="right">
-			<a href="Maisons/maison2.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			</div>
-			 
-			<div class="contoursmaison">
-			 <h2> Maison à vendre Audierne </h2>
-			<p> <img src="http://upload.dinhosting.fr/0/O/c/maison3.jpg" alt="Image de la troisieme maison">
-			 Maison deux étages et cave - 6 pièces - 118m² </p>
-			 <p class="prix"> 415 360 € </p>
-			 <div align="right">
-			<a href="Maisons/maison3.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			</div>
-			 
-			 <div class="contoursmaison">
-			<h2> Maison à vendre Bignou </h2>
-			<p> <img src="http://upload.dinhosting.fr/u/h/r/maison4.jpg" alt="Image de la quatrième maison">
-			 Maison deux étages avec grenier - 9 pièces - 157m² </p>
-			 <p class="prix"> 352 820 € </p>
-			 <div align="right">
-			<a href="Maisons/maison4.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			</div>
-			
-			<div class="contoursmaison">		
-			<h2> Maison à vendre Pornichet </h2>
-			<p> <img src="http://upload.dinhosting.fr/J/j/f/maison5.jpg" alt="Image de la cinquième maison">
-			 Maison deux étages - 8 pièces - 146m² </p>
-			 <p class="prix"> 353 600€ </p>
-			 <div align="right">
-			<a href="Maisons/maison5.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>
-			</div>
-			 </div>
-        <?php
+                $mesMaisons=getInfosMaisons($PDO);
+                foreach ($mesMaisons as $maMaison){
+                echo '<div class="contoursmaison">';
+                        echo "<h2>".$maMaison['titre']."</h2>";
+                        echo '<p> <img src="'.$maMaison['image'].'" alt="Image de la maison">';
+                        echo $maMaison['description']." </p>";
+                echo '<p class="prix"> '.$maMaison['prix'].'€ </p>';
+                echo '<div align="right">';
+                echo '<a href="'.$maMaison['image'].'"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
+                echo '</div>';
+                echo '</div>';
+                }
             }
         ?>
     </body>
