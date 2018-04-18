@@ -8,6 +8,14 @@ function getInfosMaison ($monPdo,$numMaison){
     return $laMaison;
 }
 
+function getInfos($monPdo,$id){
+    $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where numero='".$id."'");
+    $executionOk = $monObjPdoStatement->execute();
+    $laMaison = $monObjPdoStatement->fetchAll();
+    $monObjPdoStatement-> closeCursor();
+    return $laMaison;
+}
+
 function getInfosMaisons($monPdo){
     $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where type=1");
     $executionOk = $monObjPdoStatement->execute();

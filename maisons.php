@@ -19,7 +19,7 @@ session_start();
                 if(isset($_POST['login'])){
                     $login=$_POST['login'];
                     $mdp=$_POST['mdp'];
-                    $verif= verifUtil($objetPDO, $login, $mdp);
+                    $verif= verifUtil($PDO, $login, $mdp);
                     if($verif==true){
                         $_SESSION['login']=$login;
                     }
@@ -137,7 +137,7 @@ session_start();
 				echo $maMaison['description']." </p>";
                         echo '<p class="prix"> '.$maMaison['prix'].'€ </p>';
 			echo '<div align="right">';
-			echo '<a href="maison1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
+			echo '<a href="maison1.php?id='.$maMaison['numero'].'"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
 			echo '</div>';
                         
 			echo '</div>';
