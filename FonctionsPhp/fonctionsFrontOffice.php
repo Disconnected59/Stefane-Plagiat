@@ -148,8 +148,15 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
         $eLoc = "!=";
     }
     
-    $PDO = $PDO->prepare("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece");
-    $PDO = $PDO->bindValue(':login',$login);
+    $PDO = $PDO->prepare("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece AND surface BETWEEN :eSurface AND :surface AND prix BETWEEN :ePrix AND :prix");
+    $PDO = $PDO->bindValue(':jardin',$jardin);
+    $PDO = $PDO->bindValue(':ville',$loc);
+    $PDO = $PDO->bindValue(':ePiece',$ePiece);
+    $PDO = $PDO->bindValue(':piece',$piece);
+    $PDO = $PDO->bindValue(':eSurface',$eSurface);
+    $PDO = $PDO->bindValue(':surface',$surface);
+    $PDO = $PDO->bindValue(':ePrix',$ePrix);
+    $PDO = $PDO->bindValue(':prix',$prix);
     $resultat = $PDO->execute();
     $resultat = $PDO->fetchall();
     $PDO-> closeCursor();
