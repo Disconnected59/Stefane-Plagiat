@@ -1,4 +1,9 @@
 ﻿<!DOCTYPE html>
+<?php
+include_once 'FonctionsPhp/fonctionsBackOffice.php';
+ include_once 'FonctionsPhp/fonctionsFrontOffice.php';
+ $PDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+?>
 <html lang="fr">
 	<head>
 			<meta charset="UTF-8" />
@@ -61,8 +66,13 @@
           </label>
       </div>
       <div id="HTMLtoPDF">
-  	<h2> Descriptif de cette maison </h2>
-  	<p> Cette maison originale, bla bla bla bla bla bla bla bla bla bla </p>
+          <?php
+          $mesMaisons= getInfos($PDO, $_GET['id']);
+          foreach ($mesMaisons as $maMaison){
+  	echo '<h2>'.$maMaison['titre'].' </h2>';
+  	echo '<p>'.$maMaison['description'].' </p>';
+          }
+        ?>
   	</div>
   	
   	<script src="../js/pdfFromHTML.js"></script>

@@ -77,7 +77,7 @@ else
 				echo $maMaison['description']." </p>";
                         echo '<p class="prix"> '.$maMaison['prix'].'€ </p>';
 			echo '<div align="right">';
-			echo '<a href="maison1.php"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
+			echo '<a href="maison1.php?id='.$maMaison['numero'].'"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
 			echo '</div>';
                         
 			echo '</div>';
