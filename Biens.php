@@ -128,6 +128,7 @@ session_start();
         </div>
         <?php
             if (isset($_POST['location'])) {
+                
                 $lesMaisons= selectionBien($PDO, $_POST['type'], $_POST['jardin'], $_POST['piece'], $_POST['surface'], $_POST['prix'], $_POST['loc']);
                 foreach ($lesMaisons as $maMaison){
                 echo '<div class="contoursmaison">';
