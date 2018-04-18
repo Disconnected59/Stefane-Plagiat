@@ -128,7 +128,7 @@ session_start();
         </div>
         <?php
             if (isset($_POST['location'])) {
-                echo"";
+                $lesMaisons= selectionBien($PDO, $_POST['type'], $_POST['jardin'], $_POST['piece'], $_POST['surface'], $_POST['prix'], $_POST['loc']);
             }
             else{
                 $mesMaisons=getInfosMaisons($PDO);
