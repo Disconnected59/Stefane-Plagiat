@@ -131,9 +131,9 @@ function getPrix($PDO){
 function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
     $eType = "=";
     $eJardin = "=";
-    $ePiece = $piece - 10;
-    $eSurface = $surface - 200;
-    $ePrix = $prix - 200000;
+    $ePiece = ($piece - 10);
+    $eSurface = ($surface - 200);
+    $ePrix = ($prix - 200000);
     $eLoc = "=";
     if ($type == "tous"){
         $type = 0;
@@ -147,16 +147,16 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
         $loc = 0;
         $eLoc = "!=";
     }
-    
-    $PDO = $PDO->prepare("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece AND surface BETWEEN :eSurface AND :surface AND prix BETWEEN :ePrix AND :prix");
-    $PDO = $PDO->bindValue(':jardin',$jardin);
-    $PDO = $PDO->bindValue(':ville',$loc);
-    $PDO = $PDO->bindValue(':ePiece',$ePiece);
-    $PDO = $PDO->bindValue(':piece',$piece);
-    $PDO = $PDO->bindValue(':eSurface',$eSurface);
-    $PDO = $PDO->bindValue(':surface',$surface);
-    $PDO = $PDO->bindValue(':ePrix',$ePrix);
-    $PDO = $PDO->bindValue(':prix',$prix);
+    $string = ("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece AND surface BETWEEN :eSurface AND :surface AND prix BETWEEN :ePrix AND :prix");
+    $PDO = $PDO->prepare($string);
+    $Test1 = $PDO->bindValue(':jardin',$jardin);
+    $Test2 = $PDO->bindValue(':ville',$loc);
+    $Test3 = $PDO->bindValue(':ePiece',$ePiece);
+    $Test4 = $PDO->bindValue(':piece',$piece);
+    $Test5 = $PDO->bindValue(':eSurface',$eSurface);
+    $Test6 = $PDO->bindValue(':surface',$surface);
+    $Test7 = $PDO->bindValue(':ePrix',$ePrix);
+    $Test8 = $PDO->bindValue(':prix',$prix);
     $resultat = $PDO->execute();
     $resultat = $PDO->fetchall();
     $PDO-> closeCursor();

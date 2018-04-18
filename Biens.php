@@ -128,8 +128,7 @@ session_start();
         </div>
         <?php
             if (isset($_POST['location'])) {
-                
-                $lesMaisons= selectionBien($PDO, $_POST['type'], $_POST['jardin'], $_POST['piece'], $_POST['surface'], $_POST['prix'], $_POST['loc']);
+                $lesMaisons= selectionBien($PDO, $_POST['Type'], $_POST['Jardin'], $_POST['Piece'], $_POST['surface'], $_POST['prix'], $_POST['location']);
                 foreach ($lesMaisons as $maMaison){
                 echo '<div class="contoursmaison">';
                         echo "<h2>".$maMaison['titre']."</h2>";
@@ -145,15 +144,15 @@ session_start();
             else{
                 $mesMaisons=getInfosMaisons($PDO);
                 foreach ($mesMaisons as $maMaison){
-                echo '<div class="contoursmaison">';
-                        echo "<h2>".$maMaison['titre']."</h2>";
-                        echo '<p> <img src="'.$maMaison['image'].'" alt="Image de la maison">';
-                        echo $maMaison['description']." </p>";
-                echo '<p class="prix"> '.$maMaison['prix'].'€ </p>';
-                echo '<div align="right">';
-                echo '<a href="'.$maMaison['image'].'"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
-                echo '</div>';
-                echo '</div>';
+                    echo '<div class="contoursmaison">';
+                            echo "<h2>".$maMaison['titre']."</h2>";
+                            echo '<p> <img src="'.$maMaison['image'].'" width="300" height="auto" alt="Image de la maison">';
+                            echo $maMaison['description']." </p>";
+                    echo '<p class="prix"> '.$maMaison['prix'].'€ </p>';
+                    echo '<div align="right">';
+                    echo '<a href="maison1.php?id='.$maMaison['numero'].'"><img src="http://upload.dinhosting.fr/x/6/p/voirledetail.PNG" alt="voir le détail"/></a>';
+                    echo '</div>';
+                    echo '</div>';
                 }
             }
         ?>
