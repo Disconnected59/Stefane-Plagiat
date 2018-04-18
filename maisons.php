@@ -88,19 +88,22 @@ session_start();
                                      echo("<div><input type='radio' name='surface' value='tous' id='tousType' checked/> <label for='tousType'>Tous</label></div>");
                                      $surface = getSurface($PDO);
                                      foreach ($surface as $value) {
-                                         echo("<div><input type='radio' name='surface' value=".$value['surface']." id=".$value['surface']." /> <label for=".$value['surface'].">".($value['surface']-10)." à ".$value['surface']."</label></div>");
+                                         echo("<div><input type='radio' name='surface' value=".$value['surface']." id=".$value['surface']." /> <label for=".$value['surface'].">".($value['surface']-200)." à ".$value['surface']."</label></div>");
                                      }
                                      echo("<div><input type='radio' name='surface' value=".($value['surface']+1)." id=".($value['surface']+1)." /> <label for=".$value['surface'].">".($value['surface']+1)." et plus</label></div>");
                                      ?>
                                      
 			         </div>
                                  <div class="marge">
-                                     Prix:
-                                     <div><input type="radio" name="prix" value="tous" id="tousPrix" checked/> <label for="tousPrix">Tous</label></div>
-                                     <div><input type="radio" name="prix" value="0-100" id="1000" /> <label for="1000">0 à 100,000</label></div>
-                                     <div><input type="radio" name="prix" value="101-300" id="4000" /> <label for="4000">100,001 à 400,000</label></div>
-                                     <div><input type="radio" name="prix" value="301-999" id="9999" /> <label for="9999">400,001 à 999,999</label></div>
-                                     <div><input type="radio" name="prix" value="1001" id="10000" /> <label for="10000">1,000,000 ou plus</label></div>
+                                     Prix (en €):
+                                     <?php
+                                     echo("<div><input type='radio' name='prix' value='tous' id='tousType' checked/> <label for='tousType'>Tous</label></div>");
+                                     $prix = getPrix($PDO);
+                                     foreach ($prix as $value) {
+                                         echo("<div><input type='radio' name='prix' value=".$value['prix']." id=".$value['prix']." /> <label for=".$value['prix'].">".($value['prix']-200000)." à ".$value['prix']."</label></div>");
+                                     }
+                                     echo("<div><input type='radio' name='prix' value=".($value['prix']+1)." id=".($value['prix']+1)." /> <label for=".$value['prix'].">".($value['prix']+1)." et plus</label></div>");
+                                     ?>
 			         </div>
                                  <div class="marge">
                                      location:<br/>
@@ -108,9 +111,10 @@ session_start();
                                          <?php
                                          $ville = getVille($PDO);
                                          var_dump($ville);
-                                            foreach ($ville as $value) {
-                                                echo "<option value='".$value['ville']."'>".$value['ville']."</option>";
-                                            }
+                                         echo "<option value='tous'>Tous</option>";
+                                         foreach ($ville as $value) {
+                                             echo "<option value='".$value['ville']."'>".$value['ville']."</option>";
+                                         }
                                          ?>
                                      </select>
                                  </div>
