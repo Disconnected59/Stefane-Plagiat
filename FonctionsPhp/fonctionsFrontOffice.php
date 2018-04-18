@@ -140,7 +140,7 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
         $eLoc = "!=";
     }
     
-    $PDO = $PDO->prepare("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND ");
+    $PDO = $PDO->prepare("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece");
     $PDO = $PDO->bindValue(':login',$login);
     $resultat = $PDO->execute();
     $resultat = $PDO->fetchall();
