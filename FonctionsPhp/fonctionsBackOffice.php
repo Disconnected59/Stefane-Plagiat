@@ -96,7 +96,7 @@ function recupNumBien($objPDO)
 {
     $statement=$objPDO->prepare("SELECT numero FROM biens");
     $statement->execute();
-    $resultat=$stetement->fetchAll();
+    $resultat=$statement->fetchAll();
     return $resultat;
 }
 
