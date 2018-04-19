@@ -54,6 +54,7 @@ include_once 'FonctionsPhp/fonctionsBackOffice.php';
             echo '<img src="'.$maPhoto['lien'].'" width="100"/>';
           echo '</label>';
           echo '<img src="'.$maPhoto['lien'].'"/>';
+          $i++;
         }
          
   		    echo '<label><a href="#" onclick="HTMLtoPDF()"><img src="http://pdf-ace.com/images/buttons/save-as-pdf-3.gif" width="120" height="27" alt="Save as PDF" /></a>';
