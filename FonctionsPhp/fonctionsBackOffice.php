@@ -32,7 +32,7 @@ function verifUtil($objPDO, $login, $mdp)
 
 function ajouterUnBien($objPDO, $adresse, $surface, $jardin, $nbPieces, $prix, $ville, $type, $titre, $description)
 {
-    $statement=$objPDO->prepare("INSERT INTO biens VALUES(DEFAULT, :adresse, :surface, :jardin, :nbPieces, :prix, :ville, :type, :titre, :description)");
+    $statement=$objPDO->prepare("INSERT INTO biens VALUES(DEFAULT, :adresse, :surface, :jardin, :nbPieces, :prix, :ville, :type, :titre, :description, 'rien')");
     
     $affecteValeur=$statement->bindValue(':adresse',$adresse);
     $affecteValeur=$statement->bindValue(':surface',$surface);
