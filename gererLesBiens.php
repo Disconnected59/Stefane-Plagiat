@@ -21,6 +21,10 @@ and open the template in the editor.
         include_once'/include/menuEtImage.inc';
         
         ?>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <div class='conteneur'>   
         <fieldset id='ajouterBien' class='contenu'>
             <label for='ajouterBien'>Remplissez ce formulaire pour ajouter un produit à la BDD</label>    
@@ -126,6 +130,7 @@ and open the template in the editor.
         </fieldset>
         
         <fieldset id='supprimerBien' class="contenu">
+            <label for="supprimerBien">Remplissez ce formulaire pour supprimer un bien</label>
             <form method="post" action="supprimerUnBien.php">
                 <label for='supprimerBien'>Entrez le numéro du Bien à Supprimer</label>
                 </br>

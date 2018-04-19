@@ -272,14 +272,22 @@ div.contoursmaison:hover{
 .modifierBien input {
     float: right;
     
+    
 }
 
-#conteneur {
+.conteneur {
     display: flex;
-    
+    flex-direction: column;
 }
 
 .contenu {
     
     border: 3px blue solid;
+    width: 500px;
+    margin-bottom: 10px
+}
+
+#ajouterImage {
+    
+    float: left; 
 }
