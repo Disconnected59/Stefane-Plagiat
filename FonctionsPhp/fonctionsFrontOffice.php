@@ -161,6 +161,7 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
     }
     $string = ("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece AND surface BETWEEN :eSurface AND :surface AND prix BETWEEN :ePrix AND :prix");
     $PDO = $PDO->prepare($string);
+    $Test0 = $PDO->bindValue(':type',$type);
     $Test1 = $PDO->bindValue(':jardin',$jardin);
     $Test2 = $PDO->bindValue(':ville',$loc);
     $Test3 = $PDO->bindValue(':ePiece',$ePiece);
