@@ -12,6 +12,8 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        include_once 'FonctionsPhp/fonctionsBackOffice.php';
+        $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
         if(isset($_SESSION['login']))
         {
         include_once'/include/adminConnecte.inc';
@@ -66,9 +68,22 @@ and open the template in the editor.
          <fieldset id='modifierBien' class='contenu'>
             <label for='modifierBien'>Remplissez ce formulaire pour modifier un produit de la BDD</label>    
             <form method="post" id="ajouter" action="modifierUnBien.php">
-                <label for="numero">Numero :</label>
-                <input type="text" id="numero" name="numeroModif">
+                <label for="numeroModif">Numero :</label>
+                <select name='numeroModif' id='numerosModif'> 
+                <?php
+                
+                $i=1;
+                       $lesNumerosBiens=recupNumBien($objetPDO);
+                       foreach($lesNumerosBiens as $unNumero)
+                       {
+                          echo '<option value="'.$i.'">'.$unNumero['numero'].'</option>';
+                          $i++;
+                       }
+                
+                ?>
+               </select> 
                 <br/>
+            
                 <br/>
                 <label for="adresse">Adresse :</label>
                 <input type="text" id="adresse" name="adresseModif">
@@ -124,13 +139,11 @@ and open the template in the editor.
         <fieldset id="ajouterImage" class="contenu">
             <label for='ajouterImage'>Remplissez ce formulaire pour ajouter une Image à un bien</label>
             <form method="post" action="ajouterUneImage.php">
-                <label for="numeroBien">Entrez le numero du Bien auquel ajouter l'image</label>
+                <label for="numeroBien">Selectionez le numero du Bien auquel ajouter l'image</label>  
                 <br/>
-                <input type='text' id='numeroBien' name='numImageBien'>
-                <br/>
-                <!-- <select name='listeNumeros' id='numerosBiens'> 
+                <select name='numeroBien' id='numerosBiens'> 
                 <?php
-                /*
+                
                 $i=1;
                        $lesNumerosBiens=recupNumBien($objetPDO);
                        foreach($lesNumerosBiens as $unNumero)
@@ -138,9 +151,10 @@ and open the template in the editor.
                           echo '<option value="'.$i.'">'.$unNumero['numero'].'</option>';
                           $i++;
                        }
-                */
+                
                 ?>
-               </select> -->
+               </select> 
+                <br/>
                 <label for='lienImage'>Entrez le lien de l'image à ajouter</label>
                 <br/>
                 <input type='text' id="lienImage" name='lienImage'>
