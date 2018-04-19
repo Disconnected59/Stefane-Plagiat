@@ -12,9 +12,9 @@
         include_once 'FonctionsPhp/fonctionsBackOffice.php';
         $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
 
-        if(isset($_POST['numImageBien']))
+        if(isset($_POST['numeroBien']))
         {
-            $numero=$_POST['numImageBien'];
+            $numero=$_POST['numeroBien'];
             $lien=$_POST['lienImage'];
             $verifAjou= ajouterImage($objetPDO, $numero, $lien);
            if ($verifAjou==true)
