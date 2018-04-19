@@ -53,7 +53,7 @@ include_once 'FonctionsPhp/fonctionsBackOffice.php';
           echo '<label for="id'.$i.'">';
             echo '<img src="'.$maPhoto['lien'].'" width="100"/>';
           echo '</label>';
-          echo '<img src="'.$maPhoto['lien'].'"/>';
+          echo '<img src="'.$maPhoto['lien'].'" width="300" height="100"/>';
           $i++;
         }
          
@@ -61,7 +61,10 @@ include_once 'FonctionsPhp/fonctionsBackOffice.php';
           echo '</label>';
         
           ?>
+            
       </div>
+        <br/>
+        <br/>
       <div id="HTMLtoPDF">
           <?php
           $mesMaisons= getInfos($PDO, $_GET['id']);
