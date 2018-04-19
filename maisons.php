@@ -59,8 +59,10 @@ session_start();
                                      <?php
                                      echo("<div><input type='radio' name='Type' value='tous' id='tousType' checked/> <label for='tousType'>Tous</label></div>");
                                      $Type = getTypeBien($PDO);
+                                     $i=1;
                                      foreach ($Type as $value) {
-                                         echo("<div><input type='radio' name='Type' value=".$value['libelle']." id=".$value['libelle']." /> <label for=".$value['libelle'].">".$value['libelle']."</label></div>");
+                                         echo("<div><input type='radio' name='Type' value=".$i." id=".$value['libelle']." /> <label for=".$value['libelle'].">".$value['libelle']."</label></div>");
+                                         $i++;
                                      }
                                      ?>
 			         </div>
