@@ -8,6 +8,14 @@ function getInfosMaison ($monPdo,$numMaison){
     return $laMaison;
 }
 
+function getPhotos ($monPdo,$id){
+    $monObjPdoStatement = $monPdo->prepare("SELECT lien FROM images where numero='".$id."'");
+    $executionOk = $monObjPdoStatement->execute();
+    $lesPhotos = $monObjPdoStatement->fetchAll();
+    $monObjPdoStatement-> closeCursor();
+    return $lesPhotos;
+}
+
 function getInfos($monPdo,$id){
     $monObjPdoStatement = $monPdo->prepare("SELECT * FROM biens where numero='".$id."'");
     $executionOk = $monObjPdoStatement->execute();

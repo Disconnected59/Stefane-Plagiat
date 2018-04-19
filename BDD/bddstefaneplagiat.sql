@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 18 avr. 2018 à 21:50
+-- Généré le :  jeu. 19 avr. 2018 à 13:00
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -145,42 +145,42 @@ INSERT INTO `images` (`lien`, `numero`) VALUES
 ('pictures/imageSlider/sliderappart/sliderappart4/appart4photo2.jpg', 9),
 ('pictures/imageSlider/sliderappart/sliderappart4/appart4photo3.jpg', 9),
 ('pictures/imageSlider/sliderappart/sliderappart4/appartement4.jpg', 9),
-('../pictures/imageSlider/sliderappart/sliderappart5/appart5photo3.jpg', 10),
-('../pictures/imageSlider/sliderappart/sliderappart5/appartement5.jpg', 10),
 ('pictures/imageSlider/sliderappart/sliderappart5/appart5photo2.jpg', 10),
-('../pictures/imageSlider/sliderappart/sliderappart6/appart6photo3.jpeg', 11),
-('../pictures/imageSlider/sliderappart/sliderappart6/appartement6.jpg', 11),
+('pictures/imageSlider/sliderappart/sliderappart5/appart5photo3.jpg', 10),
+('pictures/imageSlider/sliderappart/sliderappart5/appartement5.jpg', 10),
 ('pictures/imageSlider/sliderappart/sliderappart6/appart6photo2.jpeg', 11),
-('../pictures/imageSlider/sliderappart/sliderappart7/appart7photo3.jpg', 12),
-('../pictures/imageSlider/sliderappart/sliderappart7/appartement7.jpg', 12),
+('pictures/imageSlider/sliderappart/sliderappart6/appart6photo3.jpeg', 11),
+('pictures/imageSlider/sliderappart/sliderappart6/appartement6.jpg', 11),
 ('pictures/imageSlider/sliderappart/sliderappart7/appart7photo2.jpg', 12),
-('../pictures/imageSlider/sliderlocaux/sliderlocal1/image2local1.jpg', 13),
-('../pictures/imageSlider/sliderlocaux/sliderlocal1/image3local1.jpg', 13),
+('pictures/imageSlider/sliderappart/sliderappart7/appart7photo3.jpg', 12),
+('pictures/imageSlider/sliderappart/sliderappart7/appartement7.jpg', 12),
 ('pictures/imageSlider/sliderlocaux/sliderlocal1/image1local1.jpg', 13),
-('../pictures/imageSlider/sliderlocaux/sliderlocal2/image2local2.jpg', 14),
-('../pictures/imageSlider/sliderlocaux/sliderlocal2/image3local2.jpg', 14),
+('pictures/imageSlider/sliderlocaux/sliderlocal1/image2local1.jpg', 13),
+('pictures/imageSlider/sliderlocaux/sliderlocal1/image3local1.jpg', 13),
 ('pictures/imageSlider/sliderlocaux/sliderlocal2/image1local2.jpg', 14),
-('../pictures/imageSlider/sliderlocaux/sliderlocal3/image2local3.jpg', 15),
-('../pictures/imageSlider/sliderlocaux/sliderlocal3/image3local3.jpg', 15),
+('pictures/imageSlider/sliderlocaux/sliderlocal2/image2local2.jpg', 14),
+('pictures/imageSlider/sliderlocaux/sliderlocal2/image3local2.jpg', 14),
 ('pictures/imageSlider/sliderlocaux/sliderlocal3/image1local3.jpg', 15),
-('../pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image2immeuble1.jpg', 16),
-('../pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image3immeuble1.jpg', 16),
+('pictures/imageSlider/sliderlocaux/sliderlocal3/image2local3.jpg', 15),
+('pictures/imageSlider/sliderlocaux/sliderlocal3/image3local3.jpg', 15),
 ('pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image1immeuble1.jpg', 16),
-('../pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image2immeuble2.jpg', 17),
-('../pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image3immeuble2.jpg', 17),
+('pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image2immeuble1.jpg', 16),
+('pictures/imageSlider/sliderimmeuble/sliderimmeuble1/image3immeuble1.jpg', 16),
 ('pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image1immeuble2.jpg', 17),
-('../pictures/imageSlider/sliderterrain/sliderterrain1/image2terrain1.jpg', 18),
-('../pictures/imageSlider/sliderterrain/sliderterrain1/image3terrain1.jpg', 18),
+('pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image2immeuble2.jpg', 17),
+('pictures/imageSlider/sliderimmeuble/sliderimmeuble2/image3immeuble2.jpg', 17),
 ('pictures/imageSlider/sliderterrain/sliderterrain1/image1terrain1.jpg', 18),
-('../pictures/imageSlider/sliderterrain/sliderterrain2/image2terrain2.jpg', 19),
-('../pictures/imageSlider/sliderterrain/sliderterrain2/image3terrain2.jpg', 19),
+('pictures/imageSlider/sliderterrain/sliderterrain1/image2terrain1.jpg', 18),
+('pictures/imageSlider/sliderterrain/sliderterrain1/image3terrain1.jpg', 18),
 ('pictures/imageSlider/sliderterrain/sliderterrain2/image1terrain2.jpg', 19),
-('../pictures/imageSlider/sliderterrain/sliderterrain3/image2terrain3.jpg', 20),
-('../pictures/imageSlider/sliderterrain/sliderterrain3/image3terrain3.jpg', 20),
+('pictures/imageSlider/sliderterrain/sliderterrain2/image2terrain2.jpg', 19),
+('pictures/imageSlider/sliderterrain/sliderterrain2/image3terrain2.jpg', 19),
 ('pictures/imageSlider/sliderterrain/sliderterrain3/image1terrain3.jpg', 20),
-('../pictures/imageSlider/sliderterrain/sliderterrain4/image2terrain4.jpg', 21),
-('../pictures/imageSlider/sliderterrain/sliderterrain4/image3terrain4.jpg', 21),
-('pictures/imageSlider/sliderterrain/sliderterrain4/image1terrain4.jpg', 21);
+('pictures/imageSlider/sliderterrain/sliderterrain3/image2terrain3.jpg', 20),
+('pictures/imageSlider/sliderterrain/sliderterrain3/image3terrain3.jpg', 20),
+('pictures/imageSlider/sliderterrain/sliderterrain4/image1terrain4.jpg', 21),
+('pictures/imageSlider/sliderterrain/sliderterrain4/image2terrain4.jpg', 21),
+('pictures/imageSlider/sliderterrain/sliderterrain4/image3terrain4.jpg', 21);
 
 -- --------------------------------------------------------
 
