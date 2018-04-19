@@ -142,14 +142,12 @@ and open the template in the editor.
                 <label for="numeroBien">Selectionez le numero du Bien auquel ajouter l'image</label>  
                 <br/>
                 <select name='numeroBien' id='numerosBiens'> 
-                <?php
+                <?php   
                 
-                $i=1;
                        $lesNumerosBiens=recupNumBien($objetPDO);
                        foreach($lesNumerosBiens as $unNumero)
                        {
-                          echo '<option value="'.$i.'">'.$unNumero['numero'].'</option>';
-                          $i++;
+                       echo '<option value="'.$unNumero['numero'].'">'.$unNumero['numero'].'</option>';
                        }
                 
                 ?>

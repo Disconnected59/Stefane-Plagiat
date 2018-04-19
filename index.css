@@ -273,3 +273,13 @@ div.contoursmaison:hover{
     float: right;
     
 }
+
+#conteneur {
+    display: flex;
+    
+}
+
+.contenu {
+    
+    border: 3px blue solid;
+}
