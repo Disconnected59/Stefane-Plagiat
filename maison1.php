@@ -44,26 +44,22 @@ include_once 'FonctionsPhp/fonctionsBackOffice.php';
   	
 	<div class="contoursmaison">
   	
-  	<div class="slider">
-          <input type="radio" name="slide_switch" id="id1"/>
-          <label for="id1">
-            <img src="pictures/imageSlider/slidermaison/slidermaison1/image1maison1.jpg" width="100"/>
-          </label>
-          <img src="pictures/imageSlider/slidermaison/slidermaison1/image1maison1.jpg"/>
-          
-          <input type="radio" name="slide_switch" id="id2" checked="checked"/>
-          <label for="id2">
-            <img src="pictures/imageSlider/slidermaison/slidermaison1/image2maison1.jpg" width="100"/>
-          </label>
-          <img src="pictures/imageSlider/slidermaison/slidermaison1/image2maison1.jpg"/>
-          
-          <input type="radio" name="slide_switch" id="id3"/>
-          <label for="id3">
-            <img src="pictures/imageSlider/slidermaison/slidermaison1/image3maison1.jpg" width="100"/>
-          </label>
-          <img src="pictures/imageSlider/slidermaison/slidermaison1/image3maison1.jpg"/>
-  		    <label><a href="#" onclick="HTMLtoPDF()"><img src="http://pdf-ace.com/images/buttons/save-as-pdf-3.gif" width="120" height="27" alt="Save as PDF" /></a>
-          </label>
+        <?php
+        $mesPhotos=  getPhotos($PDO, $_GET['id']);
+        $i=1;
+  	echo '<div class="slider">';
+        foreach ($mesPhotos as $maPhoto){
+          echo '<input type="radio" name="slide_switch" id="id'.$i.'"/>';
+          echo '<label for="id'.$i.'">';
+            echo '<img src="'.$maPhoto['lien'].'" width="100"/>';
+          echo '</label>';
+          echo '<img src="'.$maPhoto['lien'].'"/>';
+        }
+         
+  		    echo '<label><a href="#" onclick="HTMLtoPDF()"><img src="http://pdf-ace.com/images/buttons/save-as-pdf-3.gif" width="120" height="27" alt="Save as PDF" /></a>';
+          echo '</label>';
+        
+          ?>
       </div>
       <div id="HTMLtoPDF">
           <?php
@@ -80,3 +76,4 @@ include_once 'FonctionsPhp/fonctionsBackOffice.php';
   	<script src="js/jspdf.js"></script>
   	
 	</body>
+</html>
