@@ -97,7 +97,9 @@ function recupNumBien($objPDO)
     $statement=$objPDO->prepare("SELECT numero FROM biens");
     $statement->execute();
     $resultat=$statement->fetchAll();
+    $statement->closeCursor();
     return $resultat;
+    
 }
 
 function ajouterImage($objPDO, $numero, $lienImage)
