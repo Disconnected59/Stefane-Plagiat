@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -26,56 +22,55 @@ and open the template in the editor.
         <br/>
         <br/>
         <div class='conteneur'>   
-        <fieldset id='ajouterBien' class='contenu'>
-            <label for='ajouterBien'>Remplissez ce formulaire pour ajouter un produit à la BDD</label>    
+        <fieldset class='contenu'>
+            <legend>Remplissez ce formulaire pour ajouter un produit à la BDD</legend>    
             <form method="post" id="ajouter" action="ajouterUnBien.php">
                 <label for="adresse">Adresse :</label>
                 <input type="text" id="adresseAjou" name="adresseAjou">
                 <br/>
                 <br/>
-                <label for="surface">Surface :<label>
+                <label for="surface">Surface :</label>
                 <input type="text" id="surfaceAjou" name="surfaceAjou">
                 <br/>
                 <br/>
-                <label for="jardin">Jardin (Oui ou non) :<label>
-                <input type="text" id="jardin" name="jardinAjou">
+                <label for="jardin">Jardin (Oui ou non) :</label>
+                <input type="text" id="jardinAjou" name="jardinAjou">
                 <br/>
                 <br/>
-                <label for="nbPieces">Nombre de pièces :<label>
-                <input type="text" id="nbPieces" name="nbPiecesAjou">
+                <label for="nbPieces">Nombre de pièces :</label>
+                <input type="text" id="nbPiecesAjou" name="nbPiecesAjou">
                 <br/>
                 <br/>
-                <label for="prix">Prix :<label>
-                <input type="text" id="prix" name="prixAjou">
+                <label for="prix">Prix :</label>
+                <input type="text" id="prixAjou" name="prixAjou">
                 <br/>
                 <br/>
-                <label for="ville">Ville :<label>
-                <input type="text" id="ville" name="villeAjou">
+                <label for="ville">Ville :</label>
+                <input type="text" id="villeAjou" name="villeAjou">
                 <br/>
                 <br/>
-                <label for="type">Type :<label>
-                <input type="text" id="type" name="typeAjou">
+                <label for="type">Type :</label>
+                <input type="text" id="typeAjou" name="typeAjou">
                 <br/>
                 <br/>
-                <label for="titre">Titre :<label>
-                <input type="text" id="titre" name="titreAjou">
+                <label for="titre">Titre :</label>
+                <input type="text" id="titreAjou" name="titreAjou">
                 <br/>
                 <br/>
-                <label for="description">Description :<label>
-                <input type="text" id="description" name="descriptionAjou">
+                <label for="description">Description :</label>
+                <input type="text" id="descriptionAjou" name="descriptionAjou">
                 <br/>
                 <br/>                
                 <input type="submit" value="Ajouter" name='btnAjou'>
             </form> 
         </fieldset>
         
-         <fieldset id='modifierBien' class='contenu'>
-            <label for='modifierBien'>Remplissez ce formulaire pour modifier un produit de la BDD</label>    
-            <form method="post" id="ajouter" action="modifierUnBien.php">
-                <label for="numeroModif">Numero :</label>
-                <select name='numeroModif' id='numerosModif'> 
+         <fieldset  class='contenu'>
+             <legend>Remplissez ce formulaire pour modifier un produit de la BDD</legend>  
+            <form method="post" id="modifier" action="modifierUnBien.php">
+                <label>Numero :</label>
+                <select name='numeroModif' id='numeroModif'> 
                 <?php
-                
                 $i=1;
                        $lesNumerosBiens=recupNumBien($objetPDO);
                        foreach($lesNumerosBiens as $unNumero)
@@ -93,35 +88,35 @@ and open the template in the editor.
                 <input type="text" id="adresse" name="adresseModif">
                 <br/>
                 <br/>
-                <label for="surface">Surface :<label>
+                <label for="surface">Surface :</label>
                 <input type="text" id="surface" name="surfaceModif">
                 <br/>
                 <br/>
-                <label for="jardin">Jardin (Oui ou non) :<label>
+                <label for="jardin">Jardin (Oui ou non) :</label>
                 <input type="text" id="jardin" name="jardinModif">
                 <br/>
                 <br/>
-                <label for="nbPieces">Nombre de pièces :<label>
+                <label for="nbPieces">Nombre de pièces :</label>
                 <input type="text" id="nbPieces" name="nbPiecesModif">
                 <br/>
                 <br/>
-                <label for="prix">Prix :<label>
+                <label for="prix">Prix :</label>
                 <input type="text" id="prix" name="prixModif">
                 <br/>
                 <br/>
-                <label for="ville">Ville :<label>
+                <label for="ville">Ville :</label>
                 <input type="text" id="ville" name="villeModif">
                 <br/>
                 <br/>
-                <label for="type">Type :<label>
+                <label for="type">Type :</label>
                 <input type="text" id="type" name="typeModif">
                 <br/>
                 <br/>
-                <label for="titre">Titre :<label>
+                <label for="titre">Titre :</label>
                 <input type="text" id="titre" name="titreModif">
                 <br/>
                 <br/>
-                <label for="description">Description :<label>
+                <label for="description">Description :</label>
                 <input type="text" id="description" name="descriptionModif">
                 <br/>
                 <br/>                
@@ -130,11 +125,11 @@ and open the template in the editor.
         </fieldset>
         
         <fieldset id='supprimerBien' class="contenu">
-            <label for="supprimerBien">Remplissez ce formulaire pour supprimer un bien</label>
+            <legend>Remplissez ce formulaire pour supprimer un bien</legend>
             <form method="post" action="supprimerUnBien.php">
-                <label for='supprimerBien'>Entrez le numéro du Bien à Supprimer</label>
-                </br>
-                <input type="text" id="supprimerBien" name="numeroSuppr">
+                <label>Entrez le numéro du Bien à Supprimer</label>
+                <br/>
+                <input type="text" id="numeroSuppr" name="numeroSuppr">
                 <br/>
                 <input type="submit" value="Supprimer" name="supprimerBien"> 
             </form>
@@ -142,9 +137,9 @@ and open the template in the editor.
         </div>
         
         <fieldset id="ajouterImage" class="contenu">
-            <label for='ajouterImage'>Remplissez ce formulaire pour ajouter une Image à un bien</label>
+            <legend>Remplissez ce formulaire pour ajouter une Image à un bien</legend>
             <form method="post" action="ajouterUneImage.php">
-                <label for="numeroBien">Selectionez le numero du Bien auquel ajouter l'image</label>  
+                <label>Selectionez le numero du Bien auquel ajouter l'image</label>  
                 <br/>
                 <select name='numeroBien' id='numerosBiens'> 
                 <?php   
@@ -166,11 +161,6 @@ and open the template in the editor.
                 <input type='submit' value='Ajouter image' name='ajouImage'>             
             </form>
         </fieldset>
-        
-        
-        
-        
-        
-        
+
     </body>
 </html>
