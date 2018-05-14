@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
 include_once 'FonctionsPhp/fonctionsBackOffice.php';
  include_once 'FonctionsPhp/fonctionsFrontOffice.php';
