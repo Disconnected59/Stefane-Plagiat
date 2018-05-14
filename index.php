@@ -21,8 +21,8 @@ $objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
                         {
                           $login=$_POST['login'];
                           $mdp=$_POST['mdp'];
-                          
-                         $verif= verifUtil($objetPDO, $login, $mdp);
+                         
+                         $verif=verifUtil($objetPDO, $login, $mdp);
                          if($verif==true)
                          { 
                              $_SESSION['login']=$login;

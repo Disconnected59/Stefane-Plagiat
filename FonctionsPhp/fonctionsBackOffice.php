@@ -30,6 +30,8 @@ function verifUtil($objPDO, $login, $mdp)
     return $utilisateur;
 }
 
+
+
 function ajouterUnBien($objPDO, $adresse, $surface, $jardin, $nbPieces, $prix, $ville, $type, $titre, $description)
 {
     $statement=$objPDO->prepare("INSERT INTO biens VALUES(DEFAULT, :adresse, :surface, :jardin, :nbPieces, :prix, :ville, :type, :titre, :description, 'rien')");
@@ -115,4 +117,16 @@ function ajouterImage($objPDO, $numero, $lienImage)
         $verif=true;
     }
      return $verif;
+}
+
+function ajouterUser($objPDO, $leLogin, $leMDP)
+{
+    $leMDP = password_hash($leMDP, PASSWORD_DEFAULT);           //Hashage du mot de passe pour la bdd
+    $statement=$objPDO->prepare("INSERT INTO utilisateur VALUES"
+            ."(:leLogin, :leMDP)"); 
+    $affecteValeur= $statement->bindValue(':leLogin',$leLogin);
+    $affecteValeur= $statement->bindValue(':leMDP',$leMDP); 
+    $verifExecution=$statement->execute();
+   
+   return $verifExecution;   
 }
