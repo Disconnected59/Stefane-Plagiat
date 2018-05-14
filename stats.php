@@ -26,7 +26,7 @@ window.onload = function () {
 			legendText: "{indexLabel}",
 			dataPoints: [
 				{  y: 4181563, indexLabel: "PlayStation 3" },
-				{  y: 2175498, indexLabel: "Wii" },
+				{  y: 217549888, indexLabel: "Wii" },
 				{  y: 3125844, indexLabel: "Xbox 360" },
 				{  y: 1176121, indexLabel: "Nintendo DS"},
 				{  y: 1727161, indexLabel: "PSP" },
