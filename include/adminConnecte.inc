@@ -12,4 +12,7 @@ echo 'Bienvenue '.$_SESSION['login'];
 <br/>
 <br/>
 <a href='lesStats.php'>Cliquez ici pour voir les statistiques</a>
+<br/>
+<br/>
+<a href="ajouterUtilisateur.php">Cliquez ici pour ajouter un administrateur</a>
 
