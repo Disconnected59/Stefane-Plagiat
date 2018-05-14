@@ -130,3 +130,10 @@ function ajouterUser($objPDO, $leLogin, $leMDP)
    
    return $verifExecution;   
 }
+function recupStats($PDO){
+    $PDO = $PDO->prepare("SELECT FROM stats");
+    $PDO = $PDO->execute();
+    $resultat = $PDO->fetchAll();
+    $PDO-> closeCursor();
+    return $resultat;
+}

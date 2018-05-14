@@ -156,8 +156,6 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
     $stats = ("INSERT INTO stats VALUES(NULL,'".$loc."',".$prix.",".$surface.",'".$date."')");
     $PDO2 = $PDO2->prepare($stats);
     $resultatStat = $PDO2->execute();
-    var_dump($resultatStat);
-    echo($stats);
     $PDO2-> closeCursor();
     
     //critere des recherches
