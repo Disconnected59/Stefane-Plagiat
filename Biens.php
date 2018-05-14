@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
 session_start();
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
