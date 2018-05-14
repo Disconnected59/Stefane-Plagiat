@@ -143,6 +143,24 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
     $eSurface = ($surface - 200);
     $ePrix = ($prix - 200000);
     $eLoc = " = ";
+    
+    //ajouter dans les stats
+    if($prix == "tous"){
+        $prix = 0;
+    }
+    if($surface == "tous"){
+        $surface = 0;
+    }
+    $date = gmDate("Y-m-d");
+    $PDO2 = $PDO;
+    $stats = ("INSERT INTO stats VALUES(NULL,'".$loc."',".$prix.",".$surface.",'".$date."')");
+    $PDO2 = $PDO2->prepare($stats);
+    $resultatStat = $PDO2->execute();
+    var_dump($resultatStat);
+    echo($stats);
+    $PDO2-> closeCursor();
+    
+    //critere des recherches
     if ($type == "tous"){
         $type = 0;
         $eType = " <> ";
@@ -159,14 +177,15 @@ function selectionBien($PDO,$type,$jardin,$piece,$surface,$prix,$loc){
         $piece = 99999999999999;
         $ePiece = 0;
     }
-    if ($surface == "tous"){
+    if ($surface == 0){
         $surface = 99999999999999;
         $eSurface = 0;
     }
-    if ($prix == "tous"){
+    if ($prix == 0){
         $prix = 99999999999999;
         $ePrix = 0;
     }
+    //resultat des criteres de recherche
     $string = ("SELECT * FROM biens WHERE type".$eType.":type AND jardin".$eJardin.":jardin AND ville".$eLoc.":ville AND nbPieces BETWEEN :ePiece AND :piece AND surface BETWEEN :eSurface AND :surface AND prix BETWEEN :ePrix AND :prix");
     $PDO = $PDO->prepare($string);
     $Test0 = $PDO->bindValue(':type',$type);
