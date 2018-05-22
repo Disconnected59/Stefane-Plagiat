@@ -10,18 +10,20 @@ function verifUtil($objPDO, $login, $mdp)
 {
     $utilisateur=false;
     $statement=$objPDO->prepare("SELECT id, mdp FROM utilisateur WHERE"
-            ." id=:login AND mdp=:mdp");
+            ." id=:login");
+    
+  
     
     $affecteValeur= $statement->bindValue(':login',$login);
-    $affecteValeur= $statement->bindValue(':mdp',$mdp);
-
+  
     $execution=$statement->execute();
     $resultat=$statement->fetch();
     
     $idRecup=$resultat['id'];
     $mdpRecup=$resultat['mdp'];
+    $verifMdp= password_verify($mdp, $mdpRecup);
     
-    if($idRecup==$login && $mdpRecup==$mdp)       
+    if($verifMdp==true)       
     {
        $utilisateur=true;     
     }
@@ -121,11 +123,11 @@ function ajouterImage($objPDO, $numero, $lienImage)
 
 function ajouterUser($objPDO, $leLogin, $leMDP)
 {
-    $leMDP = password_hash($leMDP, PASSWORD_DEFAULT);           //Hashage du mot de passe pour la bdd
+    $leMDPhashé = password_hash($leMDP, PASSWORD_DEFAULT);           //Hashage du mot de passe pour la bdd
     $statement=$objPDO->prepare("INSERT INTO utilisateur VALUES"
             ."(:leLogin, :leMDP)"); 
     $affecteValeur= $statement->bindValue(':leLogin',$leLogin);
-    $affecteValeur= $statement->bindValue(':leMDP',$leMDP); 
+    $affecteValeur= $statement->bindValue(':leMDP',$leMDPhashé); 
     $verifExecution=$statement->execute();
    
    return $verifExecution;   
