@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 14 mai 2018 à 11:26
+-- Généré le :  mar. 22 mai 2018 à 09:20
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -231,7 +231,7 @@ INSERT INTO `typebien` (`numero`, `libelle`) VALUES
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id` varchar(12) NOT NULL,
-  `mdp` varchar(12) NOT NULL,
+  `mdp` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -240,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `mdp`) VALUES
-('admin', 'admin');
+('admin', '$2y$10$80mDtIqoVurhAAwbhCBss.DLdXl.qp4CosZlIlv91JkRvi93GPoVC');
 
 --
 -- Contraintes pour les tables déchargées
