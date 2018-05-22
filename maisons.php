@@ -17,7 +17,7 @@ session_start();
             if(isset($_POST['login'])){
                 $login=$_POST['login'];
                 $mdp=$_POST['mdp'];
-                $verif= verifUtil($objetPDO, $login, $mdp);
+                $verif= verifUtil($PDO, $login, $mdp);
                 if($verif==true){
                     $_SESSION['login']=$login;
                 }

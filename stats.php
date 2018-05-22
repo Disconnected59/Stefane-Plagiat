@@ -3,6 +3,10 @@
  include_once 'FonctionsPhp/fonctionsBackOffice.php';
  include_once 'FonctionsPhp/fonctionsFrontOffice.php';
  $PDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+ include_once 'FonctionsPhp/fonctionsStats.php';
+ $prix = donnePrixParNombreRecherche($PDO);
+ $ville= donneVilleParNombreRecherche($PDO);
+ $surface= donneSurfaceParNombreRecherche($PDO);
 ?>
 <html lang="fr">
 	<head>
@@ -15,7 +19,7 @@ window.onload = function () {
 	{
 		theme: "theme2",
 		title:{
-			text: "Statistique recherche"
+			text: "Statistique ville"
 		},		
 		data: [
 		{       
@@ -24,9 +28,64 @@ window.onload = function () {
 			toolTipContent: "{y} - #percent %",
 			legendText: "{indexLabel}",
 			dataPoints: [
-				{  y: 150, indexLabel: "Surface" },
-				{  y: 2000, indexLabel: "Prix" },
-				{  y: 500, indexLabel: "Location" },
+				  <?php
+                                foreach ($ville as $uneVille){
+                                echo "{y: ".$uneVille[cVille].", indexLabel: '".$uneVille[ville]."' },";
+				}
+				?>
+			]
+		}
+		]
+	});
+	chart.render();
+}
+
+    window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		theme: "theme2",
+		title:{
+			text: "Statistique prix"
+		},		
+		data: [
+		{       
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				<?php
+                                foreach ($prix as $unPrix){
+                                echo "{y: ".$unPrix[cPrix].", indexLabel: '".$unPrix[prix]."' },";
+				}
+				?>
+				
+			]
+		}
+		]
+	});
+	chart.render();
+}
+
+    window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		theme: "theme2",
+		title:{
+			text: "Statistique surface"
+		},		
+		data: [
+		{       
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				<?php
+                                foreach ($surface as $uneSurface){
+                                echo "{y: ".$uneSurface[cSurface].", indexLabel: '".$uneSurface[surface]."' },";
+				}
+				?>
 				
 			]
 		}
@@ -36,7 +95,6 @@ window.onload = function () {
 }
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
-        </head>
 <body>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 </body>

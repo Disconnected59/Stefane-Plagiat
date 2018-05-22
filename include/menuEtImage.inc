@@ -24,10 +24,6 @@
                        			 <li><a href="liens.php">liens</a></li>
                     		     <li><a href="contact.php">nous contacter</a></li>
                     		     <li><a href="team.php">team</a></li>
-                                     <li><a href="deconnexion.php">Se deconnecter</a></li>
-                                     <li><a href='gererLesBiens.php'>Gérer les biens</a></li>
-                                     <li><a href='stats.php'>Voir les statistiques</a></li>
-                                     <li><a href="ajouterUtilisateur.php">Cliquez ici pour ajouter un administrateur</a></li>
                				 </ul>
        				 </li>
 				</ul>
