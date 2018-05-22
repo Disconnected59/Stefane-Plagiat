@@ -42,7 +42,7 @@ window.onload = function () {
 
 
 
-	var chart = new CanvasJS.Chart("chartContainer",
+	var chart1 = new CanvasJS.Chart("chartContainer",
 	{
 		theme: "theme2",
 		title:{
@@ -65,10 +65,10 @@ window.onload = function () {
 		}
 		]
 	});
-	chart.render();
+	chart1.render();
 
 
-	var chart = new CanvasJS.Chart("chartContainer",
+	var chart2 = new CanvasJS.Chart("chartContainer",
 	{
 		theme: "theme2",
 		title:{
@@ -91,7 +91,7 @@ window.onload = function () {
 		}
 		]
 	});
-	chart.render();
+	chart2.render();
 }
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
