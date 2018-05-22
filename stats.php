@@ -30,17 +30,18 @@ window.onload = function () {
 			dataPoints: [
 				  <?php
                                 foreach ($ville as $uneVille){
-                                echo "{y: ".$uneVille[cVille].", indexLabel: '".$uneVille[ville]."' },";
+                                echo "{ y: ".$uneVille['cVille'].", indexLabel: '".$uneVille['ville']."' },";
 				}
 				?>
+                                { y: 0, indexLabel: '0' }
 			]
 		}
 		]
 	});
 	chart.render();
-}
 
-    window.onload = function () {
+
+
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
 		theme: "theme2",
@@ -56,18 +57,17 @@ window.onload = function () {
 			dataPoints: [
 				<?php
                                 foreach ($prix as $unPrix){
-                                echo "{y: ".$unPrix[cPrix].", indexLabel: '".$unPrix[prix]."' },";
+                                echo "{y: ".$unPrix['cPrix'].", indexLabel: '".$unPrix['prix']."' },";
 				}
 				?>
-				
+				{ y: 0, indexLabel: '0' }
 			]
 		}
 		]
 	});
 	chart.render();
-}
 
-    window.onload = function () {
+
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
 		theme: "theme2",
@@ -83,10 +83,10 @@ window.onload = function () {
 			dataPoints: [
 				<?php
                                 foreach ($surface as $uneSurface){
-                                echo "{y: ".$uneSurface[cSurface].", indexLabel: '".$uneSurface[surface]."' },";
+                                echo "{y: ".$uneSurface['cSurface'].", indexLabel: '".$uneSurface['surface']."' },";
 				}
 				?>
-				
+				{ y: 0, indexLabel: '0' }
 			]
 		}
 		]
