@@ -15,7 +15,7 @@
 			<link rel="stylesheet" type="text/css" href="index.css">
                         <script type="text/javascript">
 window.onload = function () {
-	var chart = new CanvasJS.Chart("chartContainer",
+	var chart = new CanvasJS.Chart("chartContainer1",
 	{
 		theme: "theme2",
 		title:{
@@ -33,7 +33,7 @@ window.onload = function () {
                                 echo "{ y: ".$uneVille['cVille'].", indexLabel: '".$uneVille['ville']."' },";
 				}
 				?>
-                                { y: 0, indexLabel: '0' }
+
 			]
 		}
 		]
@@ -42,7 +42,7 @@ window.onload = function () {
 
 
 
-	var chart1 = new CanvasJS.Chart("chartContainer",
+	var chart1 = new CanvasJS.Chart("chartContainer2",
 	{
 		theme: "theme2",
 		title:{
@@ -60,7 +60,7 @@ window.onload = function () {
                                 echo "{y: ".$unPrix['cPrix'].", indexLabel: '".$unPrix['prix']."' },";
 				}
 				?>
-				{ y: 0, indexLabel: '0' }
+
 			]
 		}
 		]
@@ -68,7 +68,7 @@ window.onload = function () {
 	chart1.render();
 
 
-	var chart2 = new CanvasJS.Chart("chartContainer",
+	var chart2 = new CanvasJS.Chart("chartContainer3",
 	{
 		theme: "theme2",
 		title:{
@@ -86,7 +86,7 @@ window.onload = function () {
                                 echo "{y: ".$uneSurface['cSurface'].", indexLabel: '".$uneSurface['surface']."' },";
 				}
 				?>
-				{ y: 0, indexLabel: '0' }
+				
 			]
 		}
 		]
@@ -96,6 +96,10 @@ window.onload = function () {
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+<br/>
+<div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+<br/>
+<div id="chartContainer3" style="height: 300px; width: 100%;"></div>
 </body>
  </html>
