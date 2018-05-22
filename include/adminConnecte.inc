@@ -11,7 +11,7 @@ echo 'Bienvenue '.$_SESSION['login'];
 <a href='gererLesBiens.php'>Cliquez ici pour gérer les biens</a>
 <br/>
 <br/>
-<a href='lesStats.php'>Cliquez ici pour voir les statistiques</a>
+<a href='stats.php'>Cliquez ici pour voir les statistiques</a>
 <br/>
 <br/>
 <a href="ajouterUtilisateur.php">Cliquez ici pour ajouter un administrateur</a>

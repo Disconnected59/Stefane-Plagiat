@@ -41,4 +41,3 @@ window.onload = function () {
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 </body>
  </html>
-	
