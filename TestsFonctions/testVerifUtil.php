@@ -2,8 +2,14 @@
 
 include_once '../FonctionsPhp/fonctionsBackOffice.php';
 
-$login=admin;
-$mdp=admin;
+
+$objetPDO= new PDO('mysql:host=localhost;dbname=bddstefaneplagiat','root','');
+$login='quentin';
+$mdp='quentin';
+
+var_dump(ajouterUser($objetPDO, $login, $mdp));
+
+
 
 ?>
 
